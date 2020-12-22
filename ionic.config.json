@@ -1,0 +1,7 @@
+{
+  "name": "mt-dictionary-composer-ra2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

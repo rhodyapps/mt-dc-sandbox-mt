@@ -1,0 +1,143 @@
+[
+    {
+        "name": "Expanse US Dictionaries",
+        "item": [
+            {
+                "name": "Standard Content",
+                "item": [
+                    {
+                        "name": "Non-Clinical Dictionaries",
+                        "item": [
+                            {
+                                "name": "Holiday",
+                                "url": "/mis-holiday"
+                            },
+                            {
+                                "name": "Bed Status",
+                                "url": "/recent"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Clinical Dictionaries",
+                        "item": [
+                            {
+                                "name": "Queries",
+                                "url": "/recent"
+                            },
+                            {
+                                "name": "Interventions",
+                                "url": "/interventions"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Application Content",
+                "item": [
+                    {
+                        "name": "Laboratory",
+                        "item": [
+                            {
+                                "name": "Lab Test",
+                                "url": "/recent"
+                            },
+                            {
+                                "name": "Loinc",
+                                "url": "/recent"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Imaging",
+                        "item": [
+                            {
+                                "name": "Tests",
+                                "url": "/recent"
+                            },
+                            {
+                                "name": "Exams",
+                                "url": "/recent"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Expanse Canada Dictionaries",
+        "item": [
+            {
+                "name": "Standard Content",
+                "item": [
+                    {
+                        "name": "item-2-1-1",
+                        "item": [
+                            {
+                                "name": "item-2-1-1-1",
+                                "url": "/recent"
+                            },
+                            {
+                                "name": "item-2-1-1-2",
+                                "url": "/recent"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item-2-1-2",
+                        "item": [
+                            {
+                                "name": "item-2-1-2-1",
+                                "url": "/recent"
+                            },
+                            {
+                                "name": "item-2-1-2-2",
+                                "url": "/recent"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Application Content",
+                "item": [
+                    {
+                        "name": "item-2-2-1",
+                        "item": [
+                            {
+                                "name": "item-2-2-1-1",
+                                "url": "/recent"
+                            },
+                            {
+                                "name": "item-2-2-1-2",
+                                "url": "/recent"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item-2-2-2",
+                        "item": [
+                            {
+                                "name": "item-2-2-2-1",
+                                "url": "/recent"
+                            },
+                            {
+                                "name": "item-2-2-2-2",
+                                "url": "/recent"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "MAAS Dictionaries",
+        "item": [ {
+            "name": "item-3-1-1-1",
+            "url": "/recent"
+        }]
+    }
+]

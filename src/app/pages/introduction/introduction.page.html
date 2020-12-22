@@ -1,0 +1,50 @@
+<ion-content>
+  <ion-slides pager="true">
+  <!-- Slide 1 -->
+  <ion-slide>
+  <ion-text color="light" class="intro-text">
+  <h1>Dictionary Composer</h1>
+  <p></p>
+  </ion-text>
+  <img src="assets/imgs/MEDITECH_Expanse_white_small.png">
+  </ion-slide>
+  <!-- Slide 2 -->
+  <ion-slide>
+  <img src="assets/imgs/MEDITECH_Expanse_white_small.png">
+  <ion-text color="light" class="intro-text">
+  <h1>Get organized</h1>
+  <p>Browse Dictionary Content</p>
+  </ion-text>
+  </ion-slide>
+  <!-- Slide 3 -->
+  <ion-slide>
+  <img src="assets/imgs/MEDITECH_Expanse_white_small.png">
+  <ion-text color="light" class="intro-text">
+  <h1>Review Content Projects</h1>
+  <p>Search and review dictionary content projects</p>
+  </ion-text>
+  </ion-slide>
+  </ion-slides>
+  </ion-content>
+  <ion-footer>
+    <ion-row class="ion-padding">
+    <ion-col size="6" class="ion-text-left">
+    <ion-button color="light" fill="outline" (click)="openSignup()">
+    Sign Up
+    </ion-button>
+    </ion-col>
+    <ion-col size="6" class="ion-text-right">
+    <ion-button color="light" fill="outline" (click)="openLogin()">
+    Log In
+    </ion-button>
+    </ion-col>
+    <ion-col size="12" class="ion-text-center ion-margin-top
+    ↪ ion-margin-bottom">
+    <ion-text color="light">
+    By signing up, you agree to our <a href="#"
+    (click)="openTerms($event)">Terms of Service</a> and <a href="#"
+    (click)="openPrivacy($event)">Privacy Policy</a>.
+    </ion-text>
+    </ion-col>
+    </ion-row>
+    </ion-footer>
