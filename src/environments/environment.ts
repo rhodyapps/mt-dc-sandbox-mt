@@ -3,16 +3,16 @@
 export const environment = {
   production: false,
 firebase:  {
- /* fb-test rhodyapps
- apiKey: "AIzaSyChdhS0m8oKp7wdtGbMPq9vUpjIWBxwsbA",
- authDomain: "fb-test-12214.firebaseapp.com",
- databaseURL: "https://fb-test-12214.firebaseio.com",
- projectId: "fb-test-12214",
- storageBucket: "fb-test-12214.appspot.com",
- messagingSenderId: "169147684678",
- appId: "1:169147684678:web:5714810187ebde3f64b747"
-*/
-  // Meditech Authorspace
+ // mt-dc-ra rhodyapps
+  apiKey: "AIzaSyB3K1Cm_ZyY0dUGXdaM_ye1zwpJeb06dGc",
+    authDomain: "mt-dc-ra.firebaseapp.com",
+    projectId: "mt-dc-ra",
+    storageBucket: "mt-dc-ra.appspot.com",
+    messagingSenderId: "978507752529",
+    appId: "1:978507752529:web:5d810c3f19ed28be13c470",
+    measurementId: "G-3NGRWXW7BF"
+
+  /*  Meditech Authorspace
   apiKey: "AIzaSyAUuJTPpBnX-qPYyFomUiUQVL9RJS9EPpc",
     authDomain: "authorspace.firebaseapp.com",
     databaseURL: "https://authorspace.firebaseio.com",
@@ -20,6 +20,7 @@ firebase:  {
     storageBucket: "authorspace.appspot.com",
     messagingSenderId: "509825408255",
     appId: "1:509825408255:web:8580f9423d7c98c46d80ca"
+    */
   }
 
 };

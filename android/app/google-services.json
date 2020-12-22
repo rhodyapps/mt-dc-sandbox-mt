@@ -1,166 +1,34 @@
 {
   "project_info": {
-    "project_number": "169147684678",
-    "firebase_url": "https://fb-test-12214.firebaseio.com",
-    "project_id": "fb-test-12214",
-    "storage_bucket": "fb-test-12214.appspot.com"
+    "project_number": "978507752529",
+    "project_id": "mt-dc-ra",
+    "storage_bucket": "mt-dc-ra.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:169147684678:android:c92dff68693a3e6e64b747",
+        "mobilesdk_app_id": "1:978507752529:android:d6bbde4626dbc84813c470",
         "android_client_info": {
-          "package_name": "com.example.myapplication"
+          "package_name": "com.firebaseapp.authorspace"
         }
       },
       "oauth_client": [
         {
-          "client_id": "169147684678-u33vlmruncggebeqsnucirahheshm99i.apps.googleusercontent.com",
+          "client_id": "978507752529-rfkbbnmlodhvr3q18667c16frnf2fplk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDocAa7ilLnakRJle1DPNl5aFfiltPhZZI"
+          "current_key": "AIzaSyCSvtDEmzFCYCeNCFtQe0PNklRg2NZoXuY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "169147684678-u33vlmruncggebeqsnucirahheshm99i.apps.googleusercontent.com",
+              "client_id": "978507752529-rfkbbnmlodhvr3q18667c16frnf2fplk.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "169147684678-rk4d6s9ntei2sj529sqck1b3178hsrnv.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.meditech.mt-dictionary-composer"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:169147684678:android:15e0751fecd1852664b747",
-        "android_client_info": {
-          "package_name": "com.example.tnfirebasebasicv1"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "169147684678-u33vlmruncggebeqsnucirahheshm99i.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDocAa7ilLnakRJle1DPNl5aFfiltPhZZI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "169147684678-u33vlmruncggebeqsnucirahheshm99i.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "169147684678-rk4d6s9ntei2sj529sqck1b3178hsrnv.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.meditech.mt-dictionary-composer"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:169147684678:android:380b0ab09cfd1f2364b747",
-        "android_client_info": {
-          "package_name": "com.firebase.tnfirebasev6"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "169147684678-mo4pstavfk3gkcbctjcv0guvkciavdhm.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.firebase.tnfirebasev6",
-            "certificate_hash": "e2f59eca69daf6c09c740ddf547dde57163a20ba"
-          }
-        },
-        {
-          "client_id": "169147684678-u33vlmruncggebeqsnucirahheshm99i.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDocAa7ilLnakRJle1DPNl5aFfiltPhZZI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "169147684678-u33vlmruncggebeqsnucirahheshm99i.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "169147684678-rk4d6s9ntei2sj529sqck1b3178hsrnv.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.meditech.mt-dictionary-composer"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:169147684678:android:adae2cb877a7b20664b747",
-        "android_client_info": {
-          "package_name": "com.meditech.mt_dictionary_composer"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "169147684678-4n7qdlppmq8pddv3g1om61u0fqvtpiot.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.meditech.mt_dictionary_composer",
-            "certificate_hash": "e2f59eca69daf6c09c740ddf547dde57163a20ba"
-          }
-        },
-        {
-          "client_id": "169147684678-u33vlmruncggebeqsnucirahheshm99i.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDocAa7ilLnakRJle1DPNl5aFfiltPhZZI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "169147684678-u33vlmruncggebeqsnucirahheshm99i.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "169147684678-rk4d6s9ntei2sj529sqck1b3178hsrnv.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.meditech.mt-dictionary-composer"
-              }
             }
           ]
         }
