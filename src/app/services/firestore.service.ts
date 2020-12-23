@@ -109,4 +109,48 @@ upsert<T>(ref: DocPredicate<T>, data: any): Promise<void> {
   });
 }
 
+colWithIds$<T>(ref: CollectionPredicate<T>, queryFn?): Observable<any[]> {
+  return this.col(ref, queryFn)
+    .snapshotChanges()
+    .pipe(
+      map((actions: DocumentChangeAction<T>[]) => {
+        return actions.map((a: DocumentChangeAction<T>) => {
+          // tslint:disable-next-line: ban-types
+          const data: Object = a.payload.doc.data() as T;
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        });
+      }),
+    );
+}
+
+inspectDoc(ref: DocPredicate<any>): void {
+  const tick = new Date().getTime();
+  this.doc(ref)
+    .snapshotChanges()
+    .pipe(
+      take(1),
+      tap((d: Action<DocumentSnapshotDoesNotExist | DocumentSnapshotExists<any>>) => {
+        const tock = new Date().getTime() - tick;
+        console.log(`Loaded Document in ${tock}ms`, d);
+      }),
+    )
+    .subscribe();
+}
+
+inspectCol(ref: CollectionPredicate<any>): void {
+  const tick = new Date().getTime();
+  this.col(ref)
+    .snapshotChanges()
+    .pipe(
+      take(1),
+      tap((c: DocumentChangeAction<any>[]) => {
+        const tock = new Date().getTime() - tick;
+        console.log(`Loaded Collection in ${tock}ms`, c);
+      }),
+    )
+    .subscribe();
+}
+
+
 }
