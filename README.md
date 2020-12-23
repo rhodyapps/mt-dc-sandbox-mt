@@ -49,3 +49,6 @@ If you get errors you may need to install Node JS, Ionic
 
  FHIR Basic Resource 
  http://www.hl7.org/fhir/basic.html
+
+ FireStore Service with Typescript Generics
+ https://fireship.io/lessons/firestore-advanced-usage-angularfire/
