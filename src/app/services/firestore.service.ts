@@ -26,6 +26,13 @@ type DocPredicate<T> = string | AngularFirestoreDocument<T>;
 export class FirestoreService {
   constructor(private afs: AngularFirestore) {}
 
+// In AngularFire v5, the reference to an object is decoupled from the Observable data.
+// That can be useful, but also requires more code. 
+// These custom methods provide Observable data in a concise readable format.
+
+// The methods in this service use TypeScript Genereics so that the code is reusable
+// https://www.typescriptlang.org/docs/handbook/generics.html
+
  // Return a reference
 
   /// **************
@@ -45,6 +52,25 @@ export class FirestoreService {
   /// Get Data
   /// **************
 
+  // These methods have a predicate type that accepts either a string or an AngularFire(Collection | Document). 
+  // This gives you the flexibility to pass these helper methods a string or firebase reference. 
+  // In other words, you don’t need to explicitly define a reference every time you want an Observable.
+
+  // Return observables with a firestore reference or just a single string, 
+  // making code more concise and readable.
+
+// *** Usage
+
+//  this.db.doc$('notes/ID')
+//  this.db.col$('notes', ref => ref.where('user', '==', 'Jeff'))
+
+/// OR just like regular AngularFire
+
+//  noteRef: AngularFireList = this.db.doc('notes/ID');
+//  this.db.doc(noteRef)
+//  this.noteRef.valueChanges()
+
+
   doc$<T>(ref: DocPredicate<T>): Observable<T> {
     return this.doc(ref)
       .snapshotChanges()
@@ -54,6 +80,17 @@ export class FirestoreService {
         }),
       );
   }
+
+// Custom Types
+
+//  type CollectionPredicate<T> = string | AngularFirestoreCollection<T>;
+//  type DocPredicate<T> = string | AngularFirestoreDocument<T>;
+
+  // Return a reference
+
+  /// **************
+  /// Get a Reference
+  /// **************
 
   col$<T>(ref: CollectionPredicate<T>, queryFn?): Observable<T[]> {
     return this.col(ref, queryFn)
@@ -66,6 +103,17 @@ export class FirestoreService {
   }
 
 /// Firebase Server Timestamp
+// Firestore does not automatically order data, 
+// so you need to have at least one property to order by
+// These methods wll add a server side timestamp to all documents in a collection
+// so you always have a way to order them in sequence
+
+// *** Usage
+
+//   db.update('items/ID', data) }) // adds updatedAt field
+//   db.set('items/ID', data) })    // adds createdAt field
+//   db.add('items', data) })       // adds createdAt field
+
 get timestamp() {
   return firebase.firestore.FieldValue.serverTimestamp();
 }
@@ -98,6 +146,12 @@ add<T>(ref: CollectionPredicate<T>, data): Promise<firebase.firestore.DocumentRe
     createdAt: timestamp,
   });
 }
+
+//  *** Usert *** Usage
+//   this.db.upsert('notes/xyz', { content: 'hello dude'})
+// check if doc exists. If YES it will update non-destructively. 
+// If NO it will set a new document.
+
 upsert<T>(ref: DocPredicate<T>, data: any): Promise<void> {
   const doc = this.doc(ref)
     .snapshotChanges()
@@ -108,6 +162,11 @@ upsert<T>(ref: DocPredicate<T>, data: any): Promise<void> {
     return snap.payload.exists ? this.update(ref, data) : this.set(ref, data);
   });
 }
+
+// ** colWithIds   *** Usage
+//   db.colWithIds$('notes')
+//   get the collection items with their ID's
+
 
 colWithIds$<T>(ref: CollectionPredicate<T>, queryFn?): Observable<any[]> {
   return this.col(ref, queryFn)
@@ -123,6 +182,11 @@ colWithIds$<T>(ref: CollectionPredicate<T>, queryFn?): Observable<any[]> {
       }),
     );
 }
+
+// *** Usage
+
+//    this.db.inspectDoc('notes/xyz')
+//    this.db.inspectCol('notes')
 
 inspectDoc(ref: DocPredicate<any>): void {
   const tick = new Date().getTime();
