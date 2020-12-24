@@ -19,7 +19,6 @@ type CollectionPredicate<T> = string | AngularFirestoreCollection<T>;
 type DocPredicate<T> = string | AngularFirestoreDocument<T>;
 
 
-
 @Injectable({
   providedIn: 'root',
 })
