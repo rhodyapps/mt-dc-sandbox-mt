@@ -28,7 +28,7 @@ export class RecentDetailsPage implements OnInit {
   constructor(private route: ActivatedRoute, public nav: NavController, private transactionService: TransactionService, private loadingController: LoadingController) { }
  
   ngOnInit() {
-    this.transactionId = this.route.snapshot.params['id'];
+    this.transactionId = this.route.snapshot.params[id];
     if (this.transactionId)  {
       this.loadTransaction();
     }
