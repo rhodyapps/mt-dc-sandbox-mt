@@ -54,6 +54,10 @@ const routes: Routes = [
     path: 'reset-pw',
     loadChildren: () => import('./pages/reset-pw/reset-pw.module').then( m => m.ResetPwPageModule)
   },
+  {
+    path: 'dictionary',
+    loadChildren: () => import('./pages/dictionary/dictionary.module').then( m => m.DictionaryPageModule)
+  },
   /*{
     path: 'recent-list',
     loadChildren: () => import('./pages/recent-list/recent-list.module').then( m => m.RecentListPageModule)

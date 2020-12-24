@@ -4,7 +4,7 @@ import { DbService } from '../../services/db.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { JsonService } from '../../services/json.service';
-
+import { FirestoreService } from '../../services/firestore.service';
 
 
 @Component({
@@ -15,7 +15,7 @@ import { JsonService } from '../../services/json.service';
 export class DictionaryFormComponent implements OnInit {
 
   constructor(
-    private db: DbService,
+    private db: FirestoreService,
     private auth: AuthService,
     public modalController: ModalController,
     private fb: FormBuilder // private params: NavParams
@@ -83,7 +83,7 @@ section;
       status: [data.status, [Validators.required]]
     });
 
-    console.log('DataSec', data.Sections[0]);
+   // console.log('DataSec', data.Sections[0]);
     console.log('data Name', data.Name);
   }
 
@@ -98,32 +98,8 @@ section;
     };
     console.log('Create Document:', data.Name);
 
-    this.db.updateAt(`Documents/${id}`, data);
+    this.db.update(`Documents/${id}`, data);
 
   }
-
-  async presentSectionForm(section) {
-
-    const _modal = await this.modalController.create({
-      component: SectionModalComponent,
-      componentProps: { section }
-    });
-
-    console.log('section Modal', section);
-
-    return await _modal.present();
-  }
-
-  deleteDocSection(section) {
-    section.Active = 'N';
-    console.log('Section Active', section.Active);
-    // console.log("Document",this.document);
-
-
-   // this.db.delete(`todos/${todo.id}`);
-   // https://stackoverflow.com/questions/42232490/firebase-remove-entire-nested-array-in-database
-
-    return section;
-    }
 
 }
