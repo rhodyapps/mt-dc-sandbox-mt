@@ -28,12 +28,13 @@ export class RecentDetailsPage implements OnInit {
   constructor(private route: ActivatedRoute, public nav: NavController, private transactionService: TransactionService, private loadingController: LoadingController) { }
  
   ngOnInit() {
+    // tslint:disable-next-line: no-string-literal
     this.transactionId = this.route.snapshot.params['id'];
     if (this.transactionId)  {
       this.loadTransaction();
     }
   }
- 
+
   async loadTransaction() {
     const loading = await this.loadingController.create({
       message: 'Loading Transaction...'

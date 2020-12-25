@@ -11,7 +11,7 @@ import { Plugins } from '@capacitor/core';
 export class HomePage implements OnInit {
 
   title = 'MEDITECH Dictionary Composer';
-  
+
   userInfo = null;
 
   constructor() { }
@@ -24,7 +24,7 @@ export class HomePage implements OnInit {
 */
 
 googleSignIn() {
-  
+
 }
 
   ngOnInit() {

@@ -3,6 +3,14 @@ import { TransactionService } from 'src/app/services/transaction.service';
 import { Observable } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Transaction } from '../../models/transaction';
+import {
+  ModalController,
+  IonRouterOutlet,
+  ActionSheetController,
+} from '@ionic/angular';
+import { Router } from '@angular/router';
+import { ModalBaseComponent } from '../../components/modal-base/modal-base.component';
+import { RecentDetailsPage } from '../../pages/recent-details/recent-details.page';
 
 @Component({
   selector: 'app-recent-list',
@@ -16,7 +24,9 @@ export class RecentListPage implements OnInit {
   private Transactions: Observable<Transaction[]>;
 
 
-  constructor(private transactionService: TransactionService) { }
+  constructor(private transactionService: TransactionService,
+              private modalCtrl: ModalController,
+              private routerOutlet: IonRouterOutlet ) { }
 
  // ngOnInit() {
   //  this.Transactions = this.transactionService.getTransactions();
@@ -36,5 +46,30 @@ remove(item: { id: any; }) {
 get(item: { id: any; }) {
   this.transactionService.getTransaction(item.id);
 }
+
+async PresentDocumentDetails() {
+  const modal = await this.modalCtrl.create({
+    component: ModalBaseComponent,
+    presentingElement: this.routerOutlet.nativeEl,
+    swipeToClose: true,
+    componentProps: {
+      rootPage: RecentDetailsPage,
+    },
+  });
+
+  await modal.present();
+}
+/*
+async presentDocumentForm(document?: any) {
+  const modal = await this.modal.create({
+    component: DocumentFormComponent,
+    componentProps: { document },
+  });
+  
+  console.log(document);
+
+  return await modal.present();
+}
+*/
 
 }

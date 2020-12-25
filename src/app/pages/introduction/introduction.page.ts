@@ -13,116 +13,105 @@ import { Router } from '@angular/router';
 import { ModalBaseComponent } from '../../components/modal-base/modal-base.component';
 import { LoginPage } from '../login/login.page';
 
-import { AngularFireAuth } from '@angular/fire/auth';
-import firebase from 'firebase/app';
-
-
-
-
 @Component({
-selector: 'app-introduction',
-templateUrl: './introduction.page.html',
-styleUrls: ['./introduction.page.scss'],
+  selector: 'app-introduction',
+  templateUrl: './introduction.page.html',
+  styleUrls: ['./introduction.page.scss'],
 })
-
 export class IntroductionPage implements OnInit {
-constructor(
-  private modalCtrl: ModalController,
-  private routerOutlet: IonRouterOutlet,
-  private actionSheetCtrl: ActionSheetController,
-  private auth: AuthService,
-  private router: Router
-) {}
+  constructor(
+    private modalCtrl: ModalController,
+    private routerOutlet: IonRouterOutlet,
+    private actionSheetCtrl: ActionSheetController,
+    private auth: AuthService,
+    private router: Router
+  ) {}
 
-async ngOnInit() {}
+  async ngOnInit() {}
 
-async openEmailSignup() {
-  const modal = await this.modalCtrl.create({
-    component: SignupPage,
-    presentingElement: this.routerOutlet.nativeEl,
-    swipeToClose: true,
-  });
+  async openEmailSignup() {
+    const modal = await this.modalCtrl.create({
+      component: SignupPage,
+      presentingElement: this.routerOutlet.nativeEl,
+      swipeToClose: true,
+    });
 
-  await modal.present();
-}
+    await modal.present();
+  }
 
-async openSignup() {
-  const buttons = [
-    {
-      text: 'Sign up with email',
-      icon: 'mail',
-      handler: () => {
-        this.openEmailSignup();
+  async openSignup() {
+    const buttons = [
+      {
+        text: 'Sign up with email',
+        icon: 'mail',
+        handler: () => {
+          this.openEmailSignup();
+        },
       },
-    },
-    {
-      text: 'Sign up with Google',
-      icon: 'logo-google',
-      handler: () => {
-        this.openGoogleSignup();
-      },
+      {
+        text: 'Sign up with Google',
+        icon: 'logo-google',
+        handler: () => {
+          this.openGoogleSignup();
+        },
+      }
+    ];
+
+    const device = await Device.getInfo();
+
+    if (device.platform === 'ios') {
+      buttons.push({
+        text: 'Sign in with Apple',
+        icon: 'logo-apple',
+        handler: () => {
+          this.openAppleSignup();
+        },
+      });
     }
-  ];
 
-  const device = await Device.getInfo();
+    const actionSheet = await this.actionSheetCtrl.create({
+      cssClass: 'custom-action-sheet',
+      buttons
+    });
+    await actionSheet.present();
+  }
 
-  if (device.platform === 'ios') {
-    buttons.push({
-      text: 'Sign in with Apple',
-      icon: 'logo-apple',
-      handler: () => {
-        this.openAppleSignup();
-      },
+  openGoogleSignup() {
+    this.auth.googleSignup().then((res) => {
+      this.router.navigateByUrl('/app');
+    }, err => {
+      // Canceled the sign up
     });
   }
 
-  const actionSheet = await this.actionSheetCtrl.create({
-    cssClass: 'custom-action-sheet',
-    buttons
-  });
-  await actionSheet.present();
-}
+  openAppleSignup() {
+    this.auth.appleSignin().then((res) => {
+      this.router.navigateByUrl('/app');
+    }, err => {
+      // Canceled the sign up
+    });
+  }
 
-openGoogleSignup() {
-  this.auth.googleSignup().then((res) => {
-    this.router.navigateByUrl('/home');
-  }, err => {
-    // Canceled the sign up
-  });
-}
+  async openLogin() {
+    const modal = await this.modalCtrl.create({
+      component: ModalBaseComponent,
+      presentingElement: this.routerOutlet.nativeEl,
+      swipeToClose: true,
+      componentProps: {
+        rootPage: LoginPage,
+      },
+    });
 
-openAppleSignup() {
-  this.auth.appleSignin().then((res) => {
-    this.router.navigateByUrl('/home');
-  }, err => {
-    // Canceled the sign up
-  });
-}
+    await modal.present();
+  }
 
-async openLogin() {
-  const modal = await this.modalCtrl.create({
-    component: ModalBaseComponent,
-    presentingElement: this.routerOutlet.nativeEl,
-    swipeToClose: true,
-    componentProps: {
-      rootPage: LoginPage,
-    },
-  });
+  async openTerms(e) {
+    e.preventDefault();
+    await Browser.open({ url: 'https://home.meditech.com/en/d/restapiresources/pages/apiterms.htm' });
+  }
 
-  await modal.present();
+  async openPrivacy(e) {
+    e.preventDefault();
+    await Browser.open({ url: 'https://ehr.meditech.com/privacy-policy' });
+  }
 }
-
-async openTerms(e) {
-  e.preventDefault();
-  await Browser.open({ url: 'https://home.meditech.com/en/d/restapiresources/pages/apiterms.htm' });
-}
-
-async openPrivacy(e) {
-  e.preventDefault();
-  await Browser.open({ url: 'https://ehr.meditech.com/privacy-policy' });
-}
-}
-
-//openLogin() {
- // this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-//}

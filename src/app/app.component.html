@@ -10,15 +10,15 @@
           </ion-menu-toggle>
           <ion-item *ngFor="let p of appPages; let i=index;" [routerDirection]="'root'" (click)="toggleLevel1('idx'+i)" [ngClass]="{active: isLevel1Shown('idx'+i)}">
             <ion-label>
-              <ion-icon [name]="isLevel1Shown('idx'+i) ? 'arrow-dropdown-circle' : 'arrow-dropright-circle'" slot="end"></ion-icon>
+              <ion-icon [name]="isLevel1Shown('idx'+i) ? 'arrow-down' : 'arrow-forward'" slot="end"></ion-icon>
               {{p.name}}
               <ul *ngIf="isLevel1Shown('idx'+i)" class="level1">
                 <li *ngFor="let i1 of p.item; let j=index;" (click)="toggleLevel2('idx'+i+'idx'+j)" [ngClass]="{active: isLevel2Shown('idx'+i+'idx'+j)}">
-                    <ion-icon [name]="isLevel2Shown('idx'+i+'idx'+j) ? 'arrow-dropdown-circle' : 'arrow-dropright-circle'" slot="end"></ion-icon>
+                    <ion-icon [name]="isLevel2Shown('idx'+i+'idx'+j) ? 'arrow-down' : 'arrow-forward'" slot="end"></ion-icon>
                   {{i1.name}}
                   <ul *ngIf="isLevel2Shown('idx'+i+'idx'+j)" class="level2">
                     <li *ngFor="let i2 of i1.item; let k=index;" (click)="toggleLevel3('idx'+i+'idx'+j+'idx'+k)" [ngClass]="{active: isLevel3Shown('idx'+i+'idx'+j+'idx'+k)}">
-                      <ion-icon [name]="isLevel3Shown('idx'+i+'idx'+j+'idx'+k) ? 'arrow-dropdown-circle' : 'arrow-dropright-circle'" slot="end"></ion-icon>
+                      <ion-icon [name]="isLevel3Shown('idx'+i+'idx'+j+'idx'+k) ? 'arrow-down' : 'arrow-forward'" slot="end"></ion-icon>
                       {{i2.name}}
                       <ul *ngIf="isLevel3Shown('idx'+i+'idx'+j+'idx'+k)" class="level3">
                         <li *ngFor="let i3 of i2.item; let l=index;" [routerLink]="[i3.url]">
