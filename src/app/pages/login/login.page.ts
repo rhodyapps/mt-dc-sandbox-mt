@@ -61,7 +61,6 @@ export class LoginPage implements OnInit {
   }
 
   openGoogleSignup() {
-    console.log('sign up google login');
     this.auth.googleSignup().then((res) => {      
       this.close();
       this.router.navigateByUrl('/app');
