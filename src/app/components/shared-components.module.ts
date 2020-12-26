@@ -8,5 +8,6 @@ import { IonicModule } from '@ionic/angular';
   imports: [CommonModule, IonicModule],
   exports: [ModalBaseComponent],
 })
+
 export class SharedComponentsModule { }
 
