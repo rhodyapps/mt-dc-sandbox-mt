@@ -1,0 +1,13 @@
+{
+  "waterAnimal": "Poisson ange",
+  "landAnimal": "Girafe",
+  "colors": [
+    { "name": "rouge", "shading": "foncé" },
+    { "name": "vert", "shading": "lumière" },
+    { "name": "bleu", "shading": "Profond" }
+  ],
+  "cost": {
+    "dollars": { "primary": "Cinquante", "tax": "Dix" },
+    "euros": { "primary": "Quarante-deux", "tax": "Huit" }
+  }
+}

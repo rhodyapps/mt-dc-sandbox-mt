@@ -1,0 +1,60 @@
+Expanse US Dictionaries|[object Object]
+Standard Content|[object Object]
+Non-Clinical Dictionaries|[object Object]
+Holiday|[object Object]
+/mis-holiday|[object Object]
+Bed Status|[object Object]
+/recent|[object Object]
+Clinical Dictionaries|[object Object]
+Queries|[object Object]
+Interventions|[object Object]
+/interventions|[object Object]
+Application Content|[object Object]
+Laboratory|[object Object]
+Lab Test|[object Object]
+Loinc|[object Object]
+Imaging|[object Object]
+Tests|[object Object]
+Exams|[object Object]
+Expanse Canada Dictionaries|[object Object]
+item-2-1-1|[object Object]
+item-2-1-1-1|[object Object]
+item-2-1-1-2|[object Object]
+item-2-1-2|[object Object]
+item-2-1-2-1|[object Object]
+item-2-1-2-2|[object Object]
+item-2-2-1|[object Object]
+item-2-2-1-1|[object Object]
+item-2-2-1-2|[object Object]
+item-2-2-2|[object Object]
+item-2-2-2-1|[object Object]
+item-2-2-2-2|[object Object]
+MAAS Dictionaries|[object Object]
+item-3-1-1-1|[object Object]
+Angel Fish|Poisson ange
+Giraffe|Girafe
+red|rouge
+dark|foncé
+green|vert
+light|lumière
+blue|bleu
+deep|Profond
+Fifty|Cinquante
+Ten|Dix
+Forty Two|Quarante-deux
+Eight|Huit
+MEDITECH|MEDITECH
+Dictionary Composer|Compositeur de dictionnaires
+Recent|Récent
+Search|Chercher
+Software by MEDITECH|Logiciel par MEDITECH
+Home|Accueil
+MEDITECH Expanse Dictionaries|Dictionnaires MEDITECH Expanse
+Dictionary Transaction Details|Détails de la transaction du dictionnaire
+Collection|Collection
+Project|Projet
+Name|Nom
+Mnemonic|Mnémonique
+Active|actif
+Release|Libération
+Notes|Remarques

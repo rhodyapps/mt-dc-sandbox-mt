@@ -1,0 +1,17 @@
+{
+  "company-name": "MEDITECH",
+  "product-name": "Woordenboek Componist",
+  "recent-button-label": "Recent",
+  "search-button-label": "Zoeken",
+  "company-branding-msg1": "Software door MEDITECH",
+  "home-button-label": "Huis",
+  "menu-item1-label": "MEDITECH Expanse Woordenboeken",
+  "transaction-detail-header": "Woordenboektransactiegegevens",
+  "transaction-detail-collection-label": "Verzameling",
+  "transaction-detail-project-label": "Project",
+  "transaction-detail-dictionary-name-label": "Naam",
+  "transaction-detail-dictionary-mnemonic-label": "Ezelsbruggetje",
+  "transaction-detail-dictionary-active-label": "Actief",
+  "transaction-detail-dictionary-release-label": "Vrijlating",
+  "transaction-detail-dictionary-notes-label": "Opmerkingen"
+}

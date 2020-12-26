@@ -1,0 +1,17 @@
+{
+  "company-name": "MEDITECH",
+  "product-name": "Sõnastiku helilooja",
+  "recent-button-label": "Viimased",
+  "search-button-label": "Otsing",
+  "company-branding-msg1": "Tarkvara autor MEDITECH",
+  "home-button-label": "Kodu",
+  "menu-item1-label": "MEDITECH Expanse Sõnaraamatud",
+  "transaction-detail-header": "Sõnaraamatu tehingu üksikasjad",
+  "transaction-detail-collection-label": "Kogumine",
+  "transaction-detail-project-label": "Projekt",
+  "transaction-detail-dictionary-name-label": "Nimi",
+  "transaction-detail-dictionary-mnemonic-label": "Mnemooniline",
+  "transaction-detail-dictionary-active-label": "Aktiivne",
+  "transaction-detail-dictionary-release-label": "Vabastage",
+  "transaction-detail-dictionary-notes-label": "Märkused"
+}

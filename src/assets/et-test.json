@@ -1,0 +1,13 @@
+{
+  "waterAnimal": "Ingel Kala",
+  "landAnimal": "Kaelkirjak",
+  "colors": [
+    { "name": "punane", "shading": "pime" },
+    { "name": "roheline", "shading": "valgus" },
+    { "name": "sinine", "shading": "sügav" }
+  ],
+  "cost": {
+    "dollars": { "primary": "Viiskümmend", "tax": "Kümme" },
+    "euros": { "primary": "42", "tax": "Kaheksa" }
+  }
+}

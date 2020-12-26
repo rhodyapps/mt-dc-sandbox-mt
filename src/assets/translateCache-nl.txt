@@ -1,0 +1,60 @@
+Expanse US Dictionaries|[object Object]
+Standard Content|[object Object]
+Non-Clinical Dictionaries|[object Object]
+Holiday|[object Object]
+/mis-holiday|[object Object]
+Bed Status|[object Object]
+/recent|[object Object]
+Clinical Dictionaries|[object Object]
+Queries|[object Object]
+Interventions|[object Object]
+/interventions|[object Object]
+Application Content|[object Object]
+Laboratory|[object Object]
+Lab Test|[object Object]
+Loinc|[object Object]
+Imaging|[object Object]
+Tests|[object Object]
+Exams|[object Object]
+Expanse Canada Dictionaries|[object Object]
+item-2-1-1|[object Object]
+item-2-1-1-1|[object Object]
+item-2-1-1-2|[object Object]
+item-2-1-2|[object Object]
+item-2-1-2-1|[object Object]
+item-2-1-2-2|[object Object]
+item-2-2-1|[object Object]
+item-2-2-1-1|[object Object]
+item-2-2-1-2|[object Object]
+item-2-2-2|[object Object]
+item-2-2-2-1|[object Object]
+item-2-2-2-2|[object Object]
+MAAS Dictionaries|[object Object]
+item-3-1-1-1|[object Object]
+Angel Fish|Angel Fish
+Giraffe|Giraffe
+red|rood
+dark|donker
+green|groen
+light|licht
+blue|blauw
+deep|diep
+Fifty|Vijftig
+Ten|Tien
+Forty Two|Tweeënveertig
+Eight|Acht
+MEDITECH|MEDITECH
+Dictionary Composer|Woordenboek Componist
+Recent|Recent
+Search|Zoeken
+Software by MEDITECH|Software door MEDITECH
+Home|Huis
+MEDITECH Expanse Dictionaries|MEDITECH Expanse Woordenboeken
+Dictionary Transaction Details|Woordenboektransactiegegevens
+Collection|Verzameling
+Project|Project
+Name|Naam
+Mnemonic|Ezelsbruggetje
+Active|Actief
+Release|Vrijlating
+Notes|Opmerkingen

@@ -1,0 +1,13 @@
+{
+  "waterAnimal": "Angel Fish",
+  "landAnimal": "Giraffe",
+  "colors": [
+    { "name": "rood", "shading": "donker" },
+    { "name": "groen", "shading": "licht" },
+    { "name": "blauw", "shading": "diep" }
+  ],
+  "cost": {
+    "dollars": { "primary": "Vijftig", "tax": "Tien" },
+    "euros": { "primary": "Tweeënveertig", "tax": "Acht" }
+  }
+}

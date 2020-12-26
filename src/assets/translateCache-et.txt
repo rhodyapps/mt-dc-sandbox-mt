@@ -1,0 +1,60 @@
+Expanse US Dictionaries|[object Object]
+Standard Content|[object Object]
+Non-Clinical Dictionaries|[object Object]
+Holiday|[object Object]
+/mis-holiday|[object Object]
+Bed Status|[object Object]
+/recent|[object Object]
+Clinical Dictionaries|[object Object]
+Queries|[object Object]
+Interventions|[object Object]
+/interventions|[object Object]
+Application Content|[object Object]
+Laboratory|[object Object]
+Lab Test|[object Object]
+Loinc|[object Object]
+Imaging|[object Object]
+Tests|[object Object]
+Exams|[object Object]
+Expanse Canada Dictionaries|[object Object]
+item-2-1-1|[object Object]
+item-2-1-1-1|[object Object]
+item-2-1-1-2|[object Object]
+item-2-1-2|[object Object]
+item-2-1-2-1|[object Object]
+item-2-1-2-2|[object Object]
+item-2-2-1|[object Object]
+item-2-2-1-1|[object Object]
+item-2-2-1-2|[object Object]
+item-2-2-2|[object Object]
+item-2-2-2-1|[object Object]
+item-2-2-2-2|[object Object]
+MAAS Dictionaries|[object Object]
+item-3-1-1-1|[object Object]
+Angel Fish|Ingel Kala
+Giraffe|Kaelkirjak
+red|punane
+dark|pime
+green|roheline
+light|valgus
+blue|sinine
+deep|sügav
+Fifty|Viiskümmend
+Ten|Kümme
+Forty Two|42
+Eight|Kaheksa
+MEDITECH|MEDITECH
+Dictionary Composer|Sõnastiku helilooja
+Recent|Viimased
+Search|Otsing
+Software by MEDITECH|Tarkvara autor MEDITECH
+Home|Kodu
+MEDITECH Expanse Dictionaries|MEDITECH Expanse Sõnaraamatud
+Dictionary Transaction Details|Sõnaraamatu tehingu üksikasjad
+Collection|Kogumine
+Project|Projekt
+Name|Nimi
+Mnemonic|Mnemooniline
+Active|Aktiivne
+Release|Vabastage
+Notes|Märkused
