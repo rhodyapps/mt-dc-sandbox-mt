@@ -1,1 +1,17 @@
-{"company-name":"MEDITECH","product-name":"Compositeur de dictionnaires","recent-button-label":"Récent","search-button-label":"Chercher","company-branding-msg1":"Logiciel par MEDITECH","home-button-label":"Accueil","menu-item1-label":"Dictionnaires MEDITECH Expanse","transaction-detail-header":"Détails de la transaction du dictionnaire","transaction-detail-collection-label":"Collection","transaction-detail-project-label":"Projet","transaction-detail-dictionary-name-label":"Nom","transaction-detail-dictionary-mnemonic-label":"Mnémonique","transaction-detail-dictionary-active-label":"actif","transaction-detail-dictionary-release-label":"Libération","transaction-detail-dictionary-notes-label":"Remarques"}
+{
+  "company-name": "MEDITECH",
+  "product-name": "Compositeur de dictionnaires",
+  "recent-button-label": "Récent",
+  "search-button-label": "Chercher",
+  "company-branding-msg1": "Logiciel par MEDITECH",
+  "home-button-label": "Accueil",
+  "menu-item1-label": "Dictionnaires MEDITECH Expanse",
+  "transaction-detail-header": "Détails de la transaction du dictionnaire",
+  "transaction-detail-collection-label": "Collection",
+  "transaction-detail-project-label": "Projet",
+  "transaction-detail-dictionary-name-label": "Nom",
+  "transaction-detail-dictionary-mnemonic-label": "Mnémonique",
+  "transaction-detail-dictionary-active-label": "actif",
+  "transaction-detail-dictionary-release-label": "Libération",
+  "transaction-detail-dictionary-notes-label": "Remarques"
+}

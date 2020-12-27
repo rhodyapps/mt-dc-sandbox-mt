@@ -6,8 +6,8 @@
       </ion-buttons>
 
       <ion-title>
-            <ion-text color="success">MEDITECH</ion-text>
-            <ion-text> Dictionary Composer </ion-text>
+            <ion-text color="success">{{ 'HOME.company-name' | translate }}</ion-text>
+            <ion-text> {{ 'HOME.product-name' | translate }} </ion-text>
           </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -16,7 +16,7 @@
   
   <ion-item-divider>
       <ion-label>
-          Software by MEDITECH
+          {{ 'HOME.company-branding-msg1' | translate}}
       </ion-label>
   </ion-item-divider>
   <!--
@@ -25,15 +25,30 @@
  
  
   <ion-item-divider>
-    
+      <ion-button (click)="openLanguagePopover($event)">
+          <ion-icon name="more" slot="icon-only">
+          </ion-icon>
+      </ion-button>
+  <!--  <ion-list>
+        <ion-item>
+            <ion-label position="stacked">
+                Language
+            </ion-label>
+            <ion-select [(ngModel)]="lang" (ionChange)="switchLanguage()">
+                <ion-select-option value="en">English</ion-select-option>
+                <ion-select-option value="fr">Francais</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+-->
   </ion-item-divider>
 
   <ion-button type="bar-button" routerLink="/recent" color="dark">
-      Recent
+      {{ 'HOME.recent-button-label' | translate }}
       <ion-icon slot="start" name="list"></ion-icon>
   </ion-button>
   <ion-button type="bar-button" routerLink="/search" color="dark">
-    Search
+    {{ 'HOME.search-button-label' | translate }}
     <ion-icon slot="start" name="help"></ion-icon>
 </ion-button>
 
