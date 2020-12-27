@@ -16,7 +16,7 @@ export class LanguageService {
 
   setInitialAppLanguage() {
     let language = this.translate.getBrowserLang();
-    this.translate.setDefaultLang(language);
+    this.translate.setDefaultLang('en');
 
     this.storage.get(LNG_KEY).then(val => {
       if (val) {
@@ -24,19 +24,19 @@ export class LanguageService {
         this.selected = val;
       }
     });
-
   }
+  
 getLanguages() {
   return [
-    { text: 'English', value: 'en'},
-    { text: 'French', value: 'fr'},
-    { text: 'Estonian', value: 'et'}
+    { text: 'English', value: 'en', img: 'assets/imgs/flags/en.png'},
+    { text: 'French', value: 'fr', img: 'assets/imgs/flags/fr.png'},
+    { text: 'Estonian', value: 'et', img: 'assets/imgs/flags/et.png'}
   ];
 
 }
 
   setLanguage(lng) {
-    this.translate.use('fr');
+    this.translate.use(lng);
     this.selected = lng;
     this.storage.set(LNG_KEY, lng);
 
