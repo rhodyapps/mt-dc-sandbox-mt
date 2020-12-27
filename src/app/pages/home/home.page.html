@@ -9,6 +9,7 @@
             <ion-text color="success">{{ 'HOME.company-name' | translate }}</ion-text>
             <ion-text> {{ 'HOME.product-name' | translate }} </ion-text>
           </ion-title>
+       
   </ion-toolbar>
 </ion-header>
 
@@ -25,10 +26,10 @@
  
  
   <ion-item-divider>
-      <ion-button (click)="openLanguagePopover($event)">
-          <ion-icon name="more" slot="icon-only">
-          </ion-icon>
-      </ion-button>
+    <ion-button (click)="openLanguagePopover($event)" fill="clear">
+        <ion-icon name="globe-outline" slot="icon-only">
+        </ion-icon>
+    </ion-button>
   <!--  <ion-list>
         <ion-item>
             <ion-label position="stacked">
@@ -43,6 +44,7 @@
 -->
   </ion-item-divider>
 
+  
   <ion-button type="bar-button" routerLink="/recent" color="dark">
       {{ 'HOME.recent-button-label' | translate }}
       <ion-icon slot="start" name="list"></ion-icon>

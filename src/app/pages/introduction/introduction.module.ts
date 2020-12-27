@@ -7,6 +7,9 @@ import { IntroductionPage } from './introduction.page';
 // import { SignupPageModule } from '../signup/signup.module';
 import { SharedComponentsModule } from '../../components/shared-components.module';
 import { LoginPageModule } from '../../pages/login/login.module';
+import { TranslateModule } from '@ngx-translate/core';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -14,7 +17,8 @@ import { LoginPageModule } from '../../pages/login/login.module';
     IonicModule,
     IntroductionPageRoutingModule,
     SharedComponentsModule,
-    LoginPageModule
+    LoginPageModule,
+    TranslateModule
    // SignupPageModule
   ],
   declarations: [IntroductionPage]

@@ -11,6 +11,7 @@ import { LanguagePopoverPage } from '../../pages/language-popover/language-popov
   styleUrls: ['./home.page.scss'],
 })
 
+
 export class HomePage implements OnInit {
 
   title = 'MEDITECH Dictionary Composer';
@@ -20,9 +21,9 @@ export class HomePage implements OnInit {
   userInfo = null;
 
   constructor(public translate: TranslateService, private popoverCrtl: PopoverController, private alertCrtl: AlertController) {
-    this.lang = 'fr';
-    this.translate.setDefaultLang('fr');
-    this.translate.use('fr');
+ //   this.lang = '';
+  //  this.translate.setDefaultLang('');
+  //  this.translate.use('');
    }
 
    switchLanguage() {

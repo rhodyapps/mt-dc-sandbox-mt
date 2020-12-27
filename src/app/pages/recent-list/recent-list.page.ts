@@ -17,6 +17,7 @@ import { RecentDetailsPage } from '../../pages/recent-details/recent-details.pag
   templateUrl: './recent-list.page.html',
   styleUrls: ['./recent-list.page.scss'],
 })
+
 export class RecentListPage implements OnInit {
 
   transactions: Transaction[];
@@ -26,7 +27,7 @@ export class RecentListPage implements OnInit {
 
   constructor(private transactionService: TransactionService,
               private modalCtrl: ModalController,
-              private routerOutlet: IonRouterOutlet ) { }
+              private routerOutlet: IonRouterOutlet) { }
 
  // ngOnInit() {
   //  this.Transactions = this.transactionService.getTransactions();

@@ -17,6 +17,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { AngularFireMessagingModule} from '@angular/fire/messaging';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { IonicStorageModule } from '@ionic/storage' ;
 
 // need HttpClientModule to implement nested menues : data/menus.json
 // import { HttpClientModule } from '@angular/common/http';
@@ -41,6 +42,7 @@ export function createTranslateLoader(http: HttpClient) {
     AngularFireFunctionsModule,
     AngularFireMessagingModule,
     HttpClientModule,
+    IonicStorageModule.forRoot(),
     AngularFireStorageModule,
     HttpClientModule,
     TranslateModule.forRoot({

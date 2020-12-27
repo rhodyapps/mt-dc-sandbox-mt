@@ -12,6 +12,10 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { ModalBaseComponent } from '../../components/modal-base/modal-base.component';
 import { LoginPage } from '../login/login.page';
+import { TranslateService } from '@ngx-translate/core';
+import { PopoverController } from '@ionic/angular';
+import { LanguagePopoverPage } from '../../pages/language-popover/language-popover.page';
+
 
 @Component({
   selector: 'app-introduction',
@@ -19,13 +23,22 @@ import { LoginPage } from '../login/login.page';
   styleUrls: ['./introduction.page.scss'],
 })
 export class IntroductionPage implements OnInit {
+
+  lang: any;
+
   constructor(
+    public translate: TranslateService,
+    private popoverCrtl: PopoverController,
     private modalCtrl: ModalController,
     private routerOutlet: IonRouterOutlet,
     private actionSheetCtrl: ActionSheetController,
     private auth: AuthService,
     private router: Router
-  ) {}
+  ) {
+    this.lang = 'en';
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
+  }
 
   async ngOnInit() {}
 
@@ -104,6 +117,17 @@ export class IntroductionPage implements OnInit {
 
     await modal.present();
   }
+
+  async openLanguagePopover(ev) {
+    const popover = await this.popoverCrtl.create({
+      component: LanguagePopoverPage,
+      event: ev
+    });
+    
+    await popover.present();
+    
+      }
+    
 
   async openTerms(e) {
     e.preventDefault();

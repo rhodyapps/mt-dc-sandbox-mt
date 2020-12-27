@@ -45,7 +45,7 @@ export class LoginPage implements OnInit {
         (res) => {
           loading.dismiss();
           this.close();
-          this.router.navigateByUrl('/app');
+          this.router.navigateByUrl('/home');
         },
         async (err) => {
           loading.dismiss();

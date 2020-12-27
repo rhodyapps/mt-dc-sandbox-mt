@@ -1,0 +1,16 @@
+{
+    "HOME" :
+    {	
+    },
+    "ALERT" :
+    {
+        "header" : "Error",
+        "msg" : "Don't know what happened"
+    
+    },
+    
+    "TRANSACTION" : 
+    {
+       
+    }
+    }

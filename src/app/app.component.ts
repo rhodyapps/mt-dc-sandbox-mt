@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 // For nested menus add this:
 import { DataService } from './services/data.service';
+import { LanguageService } from './services/language.service';
 
 
 @Component({
@@ -30,6 +31,7 @@ export class AppComponent implements OnInit {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
+    private languageService: LanguageService,
     private data: DataService // add this for nested menus
   ) {
     this.initializeApp();
@@ -44,6 +46,8 @@ export class AppComponent implements OnInit {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      this.languageService.setInitialAppLanguage();
     });
   }
 
