@@ -19,7 +19,7 @@ export class HomePage implements OnInit {
 
   userInfo = null;
 
-  constructor(public translate: TranslateService, private popoverCrtl: PopoverController, private alertCrtl: AlertController, private translate: TranslateService) {
+  constructor(public translate: TranslateService, private popoverCrtl: PopoverController, private alertCrtl: AlertController) {
     this.lang = 'fr';
     this.translate.setDefaultLang('fr');
     this.translate.use('fr');
