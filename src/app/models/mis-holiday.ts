@@ -147,4 +147,65 @@ export interface Transaction {
       "Mnemonic": "CHR",
       "Name": "Christmas Day"
   }
+
+
+
+FHIR Resource mt-content
+
+{
+	"resourceType": "Basic",
+	"identifier": "MEDITECH-Dictionary-Holiday",
+	"code": "mt - dictionary - content",
+	"subject": "mt - DC - MisHoliday",
+	"created": {
+		"MT_ExportTime": "2020-12-07T11:16:44-05:00",
+		"MT_ModifiedTime": "2020-09-03T10:59:36-04:00"
+	},
+
+	"transaction": [{
+				"url": "http://meditech.com/dictionary-composer/fhir-extensions/Expanse2.2",
+				"source-url": "https://console.firebase.google.com/u/0/project/authorspace/firestore/data~2FDC-MisHoliday~2FCHR~01MTX~02DEV.STNDS~03MIS~2FMT-data~2FCHR~01MTX~02DEV.STNDS~03MIS",
+				"valueString": [{
+							"Active": "Y",
+							"Holidays": [{
+									"ActualHoliday": "20071225",
+									"ObservedHoliday": "20071225"
+								},
+								{
+									"ActualHoliday": "20081225",
+									"ObservedHoliday": "20081225"
+								},
+								{
+									"ActualHoliday": "20091225",
+									"ObservedHoliday": "20091225"
+								},
+								{
+									"ActualHoliday": "20101225",
+									"ObservedHoliday": "20101225"
+								}
+							],
+							"Identifiers": [{
+										"Id": "CHR",
+										"IdType": "M"
+									},
+									{
+										"Id": "Christmas Day",
+										"IdType": "N"
+									},
+									{
+										"MT_Database": "MIS",
+										"MT_Dictionary": "MisHoliday",
+										"MT_DocumentName": "CHR~01MTX~02DEV.STNDS~03MIS",
+										"MT_ExportTime": "2020-12-07T11:16:44-05:00",
+										"MT_HCIS": "DEV-STNDS",
+										"MT_HCISInt": "DEV.STNDS",
+										"MT_ModifiedTime": "2020-09-03T10:59:36-04:00",
+										"MT_OID": "CHR",
+										"MT_Release": "Expanse_2-2",
+										"MT_ReleaseInt": "Expanse 2.2",
+										"MT_Universe": "MTX",
+										"Mnemonic": "CHR",
+										"Name": "Christmas Day"
+
+
       */
