@@ -13,6 +13,11 @@ const routes: Routes = [
     import('./pages/introduction/introduction.module').then( m =>
     m.IntroductionPageModule)
     },
+    {
+      path: 'app',
+      redirectTo: 'home',
+      pathMatch: 'full'
+      },
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
@@ -53,6 +58,10 @@ const routes: Routes = [
   {
     path: 'reset-pw',
     loadChildren: () => import('./pages/reset-pw/reset-pw.module').then( m => m.ResetPwPageModule)
+  },
+  {
+    path: 'language-popover',
+    loadChildren: () => import('./pages/language-popover/language-popover.module').then( m => m.LanguagePopoverPageModule)
   },
   /*{
     path: 'recent-list',

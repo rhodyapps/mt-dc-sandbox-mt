@@ -17,16 +17,20 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { AngularFireMessagingModule} from '@angular/fire/messaging';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { IonicStorageModule } from '@ionic/storage' ;
 
-// add this to implement nested menues : data/menus.json
-import { HttpClientModule } from '@angular/common/http';
-// use Ionic InApp Browser to navigate to serch pages
-// import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+// need HttpClientModule to implement nested menues : data/menus.json
+// import { HttpClientModule } from '@angular/common/http';
+// need ngx-translate for multi language support
 
-// import { GooglePlus } from '@ionic-native/google-plus/ngx';
-// import { Firebase } from '@ionic-native/firebase/ngx';
-
-
+// import { TranslateModule } from '@ngx-translate/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { LanguagePopoverPageModule } from './pages/language-popover/language-popover.module';
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,7 +42,17 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireFunctionsModule,
     AngularFireMessagingModule,
     HttpClientModule,
+    IonicStorageModule.forRoot(),
     AngularFireStorageModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
+    LanguagePopoverPageModule
   ],
   providers: [
     StatusBar,
@@ -47,4 +61,5 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {}

@@ -1,0 +1,30 @@
+{
+"HOME" :
+{	"company-name": "MEDITECH",
+	"product-name": "Dictionary Composer",
+	"recent-button-label": "Recent",
+	"search-button-label": "Search",
+	"company-branding-msg1": "Software by MEDITECH",
+	"home-button-label": "Home",
+    "menu-item1-label": "MEDITECH Expanse Dictionaries",
+    "btn" : "Show Alert"
+},
+"ALERT" :
+{
+    "header" : "Error",
+    "msg" : "Don't know what happened"
+
+},
+
+"TRANSACTION" : 
+{
+	"transaction-detail-header": "Dictionary Transaction Details",
+	"transaction-detail-collection-label": "Collection",
+	"transaction-detail-project-label": "Project",
+	"transaction-detail-dictionary-name-label": "Name",
+	"transaction-detail-dictionary-mnemonic-label": "Mnemonic",
+	"transaction-detail-dictionary-active-label": "Active",
+	"transaction-detail-dictionary-release-label": "Release",
+	"transaction-detail-dictionary-notes-label": "Notes"
+}
+}
