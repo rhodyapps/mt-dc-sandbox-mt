@@ -58,3 +58,6 @@ Mnemonic|Ezelsbruggetje
 Active|Actief
 Release|Vrijlating
 Notes|Opmerkingen
+Show Alert|Toon waarschuwing
+Error|Fout
+Don't know what happened|Weet niet wat er is gebeurd

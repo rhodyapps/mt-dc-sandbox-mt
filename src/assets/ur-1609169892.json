@@ -1,0 +1,23 @@
+{
+  "HOME": {
+    "company-name": "میڈیکیٹ",
+    "product-name": "لغت کمپوزر",
+    "recent-button-label": "حالیہ",
+    "search-button-label": "تلاش کریں",
+    "company-branding-msg1": "MEDITECH کے ذریعہ سافٹ ویئر",
+    "home-button-label": "گھر",
+    "menu-item1-label": "مڈٹیک پھیلانے والے لغات",
+    "btn": "الرٹ دکھائیں"
+  },
+  "ALERT": { "header": "خرابی", "msg": "پتہ نہیں کیا ہوا" },
+  "TRANSACTION": {
+    "transaction-detail-header": "ڈکشنری ٹرانزیکشن کی تفصیلات",
+    "transaction-detail-collection-label": "جمع کرنا",
+    "transaction-detail-project-label": "پروجیکٹ",
+    "transaction-detail-dictionary-name-label": "نام",
+    "transaction-detail-dictionary-mnemonic-label": "میمونک",
+    "transaction-detail-dictionary-active-label": "فعال",
+    "transaction-detail-dictionary-release-label": "رہائی",
+    "transaction-detail-dictionary-notes-label": "نوٹ"
+  }
+}

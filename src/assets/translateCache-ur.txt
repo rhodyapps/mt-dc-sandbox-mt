@@ -1,0 +1,18 @@
+MEDITECH|میڈیکیٹ
+Dictionary Composer|لغت کمپوزر
+Recent|حالیہ
+Search|تلاش کریں
+Software by MEDITECH|MEDITECH کے ذریعہ سافٹ ویئر
+Home|گھر
+MEDITECH Expanse Dictionaries|مڈٹیک پھیلانے والے لغات
+Show Alert|الرٹ دکھائیں
+Error|خرابی
+Don't know what happened|پتہ نہیں کیا ہوا
+Dictionary Transaction Details|ڈکشنری ٹرانزیکشن کی تفصیلات
+Collection|جمع کرنا
+Project|پروجیکٹ
+Name|نام
+Mnemonic|میمونک
+Active|فعال
+Release|رہائی
+Notes|نوٹ

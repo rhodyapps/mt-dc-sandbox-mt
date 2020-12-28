@@ -35,6 +35,9 @@ getLanguages() {
   return [
     { text: 'English', value: 'en', img: 'assets/imgs/flags/us.png'},
     { text: 'French', value: 'fr', img: 'assets/imgs/flags/fr.png'},
+    { text: 'Spanish', value: 'es', img: 'assets/imgs/flags/es.png'},
+    { text: 'Dutch', value: 'nl', img: 'assets/imgs/flags/nl.png'},
+    { text: 'Urdu', value: 'ur', img: 'assets/imgs/flags/pk.png'},
     { text: 'Estonian', value: 'et', img: 'assets/imgs/flags/et.png'}
   ];
 

@@ -1,0 +1,18 @@
+MEDITECH|MEDITECH
+Dictionary Composer|Compositor de Diccionario
+Recent|Reciente
+Search|Buscar
+Software by MEDITECH|Software de MEDITECH
+Home|Casa
+MEDITECH Expanse Dictionaries|Diccionarios MEDITECH Expanse
+Dictionary Transaction Details|Detalles de la transacción del diccionario
+Collection|Colección
+Project|Proyecto
+Name|Nombre
+Mnemonic|Mnemotécnico
+Active|Activo
+Release|Lanzamiento
+Notes|Notas
+Show Alert|Mostrar alerta
+Error|Error
+Don't know what happened|No se que paso
