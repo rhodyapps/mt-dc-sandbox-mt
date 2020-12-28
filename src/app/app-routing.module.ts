@@ -22,11 +22,8 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
-  {
-    path: 'mis-holiday',
-  //  loadChildren: () => import('./pages/mis-holiday/mis-holiday.module').then( m => m.MisHolidayPageModule)
-  loadChildren: './pages/recent-list/recent-list.module#RecentListPageModule'
-  },
+  { path: 'mis-holiday', loadChildren: './pages/recent-list/recent-list.module#RecentListPageModule'},
+  { path: 'mis-holiday/:id', loadChildren: './pages/recent-details/recent-details.module#RecentDetailsPageModule' },
   { path: 'recent', loadChildren: './pages/recent-list/recent-list.module#RecentListPageModule' },
   { path: 'recent-detail', loadChildren: './pages/recent-details/recent-details.module#RecentDetailsPageModule' },
   { path: 'recent/:id', loadChildren: './pages/recent-details/recent-details.module#RecentDetailsPageModule' },

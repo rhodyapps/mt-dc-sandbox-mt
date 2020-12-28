@@ -3,43 +3,43 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>Dictionary Transaction Details</ion-title>
+    <ion-title>{{ 'TRANSACTION.transaction-detail-header' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
- 
+
 <ion-content padding>
  
   <ion-item>
-    <ion-label position="stacked">Collection</ion-label>
+    <ion-label position="stacked">{{ 'TRANSACTION.transaction-detail-collection-label' | translate }}</ion-label>
     <ion-input [(ngModel)]="transaction.collection"></ion-input>
   </ion-item>
   
   <ion-item>
-    <ion-label position="stacked">Project</ion-label>
+    <ion-label position="stacked">{{ 'TRANSACTION.transaction-detail-project-label' | translate }}</ion-label>
     <ion-input [(ngModel)]="transaction.project"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="stacked">Name</ion-label>
+    <ion-label position="stacked">{{ 'TRANSACTION.transaction-detail-dictionary-name-label' | translate  }}</ion-label>
     <ion-input [(ngModel)]="transaction.name"></ion-input>
   </ion-item>
  
   <ion-item>
-    <ion-label position="stacked">Mnemonic</ion-label>
+    <ion-label position="stacked">{{ 'TRANSACTION.transaction-detail-dictionary-mnemonic-label' | translate }}</ion-label>
     <ion-input [(ngModel)]="transaction.mnemonic"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="stacked">Active</ion-label>
+    <ion-label position="stacked">{{ 'TRANSACTION.transaction-detail-dictionary-active-label' | translate }}</ion-label>
     <ion-input [(ngModel)]="transaction.active" ></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="stacked">Release</ion-label>
+    <ion-label position="stacked"> {{ 'TRANSACTION.transaction-detail-dictionary-release-label' | translate }}</ion-label>
     <ion-input [(ngModel)]="transaction.release"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label position="stacked">Notes</ion-label>
+    <ion-label position="stacked">{{ 'TRANSACTION.transaction-detail-dictionary-notes-label' | translate }}</ion-label>
     <ion-textarea [(ngModel)]="transaction.notes" rows="8"></ion-textarea>
   </ion-item>
 
