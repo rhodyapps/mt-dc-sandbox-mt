@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
     this.initializeApp();
     // call this inside the constructor to initialize menus
     this.data.getData().subscribe((resp) => {
-      console.log(resp);
+      console.log("menu data: ",resp);
       this.appPages = resp;
     });
   }
