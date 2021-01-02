@@ -60,6 +60,14 @@ const routes: Routes = [
     path: 'language-popover',
     loadChildren: () => import('./pages/language-popover/language-popover.module').then( m => m.LanguagePopoverPageModule)
   },
+  {
+    path: 'account',
+    loadChildren: () => import('./pages/account/account.module').then( m => m.AccountPageModule)
+  },
+  {
+    path: 'notifications',
+    loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule)
+  },
   /*{
     path: 'recent-list',
     loadChildren: () => import('./pages/recent-list/recent-list.module').then( m => m.RecentListPageModule)
