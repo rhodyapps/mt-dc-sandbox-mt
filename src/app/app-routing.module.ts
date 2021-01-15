@@ -68,6 +68,10 @@ const routes: Routes = [
     path: 'notifications',
     loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule)
   },
+  {
+    path: 'dictionary',
+    loadChildren: () => import ('./pages/dictionary/dictionary.module').then( m => m.DictionaryPageModule)
+  }
   /*{
     path: 'recent-list',
     loadChildren: () => import('./pages/recent-list/recent-list.module').then( m => m.RecentListPageModule)

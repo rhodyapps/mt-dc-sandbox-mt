@@ -13,8 +13,8 @@
                                 "url": "/recent"
                             },
                             {
-                                "name": "Bed Status",
-                                "url": "/recent"
+                                "name": "Dictionary",
+                                "url": "/dictionary"
                             }
                         ]
                     },
