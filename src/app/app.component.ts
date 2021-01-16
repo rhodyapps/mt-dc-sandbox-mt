@@ -37,8 +37,8 @@ export class AppComponent implements OnInit {
     this.initializeApp();
     // call this inside the constructor to initialize menus
     this.data.getData().subscribe((resp) => {
-      console.log("menu data resp: ",resp[1]);
       this.appPages = resp;
+      console.log("menu data resp: ",resp);
     });
   }
 
@@ -55,6 +55,7 @@ export class AppComponent implements OnInit {
     const path = window.location.pathname.split('home/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
+      console.log("page",this.selectedIndex);
     }
   }
   clearLevel() {
