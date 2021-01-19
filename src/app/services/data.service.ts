@@ -12,7 +12,6 @@ export class DataService {
  // dataUrl = 'assets/data/mis-holiday.json';
  dataUrl = 'assets/data/mt-menu-1.json';
 
-
   constructor(private http: HttpClient) { }
 
 getData() {

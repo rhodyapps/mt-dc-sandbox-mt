@@ -5,7 +5,8 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="form">
-    <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
-  </form>
+<ul *ngFor="let transaction of transactions | async">
+  <li>{{ transaction.mnemonic }} Mnemonic</li>
+</ul>
+
 </ion-content>

@@ -18,21 +18,11 @@ import firebase from 'firebase/app';
 type CollectionPredicate<T> = string | AngularFirestoreCollection<T>;
 type DocPredicate<T> = string | AngularFirestoreDocument<T>;
 
-
 @Injectable({
   providedIn: 'root',
 })
 export class FirestoreService {
   constructor(private afs: AngularFirestore) {}
-
-// In AngularFire v5, the reference to an object is decoupled from the Observable data.
-// That can be useful, but also requires more code. 
-// These custom methods provide Observable data in a concise readable format.
-
-// The methods in this service use TypeScript Genereics so that the code is reusable
-// https://www.typescriptlang.org/docs/handbook/generics.html
-
- // Return a reference
 
   /// **************
   /// Get a Reference
@@ -46,29 +36,9 @@ export class FirestoreService {
     return typeof ref === 'string' ? this.afs.doc<T>(ref) : ref;
   }
 
-
-/// **************
+  /// **************
   /// Get Data
   /// **************
-
-  // These methods have a predicate type that accepts either a string or an AngularFire(Collection | Document). 
-  // This gives you the flexibility to pass these helper methods a string or firebase reference. 
-  // In other words, you don’t need to explicitly define a reference every time you want an Observable.
-
-  // Return observables with a firestore reference or just a single string, 
-  // making code more concise and readable.
-
-// *** Usage
-
-//  this.db.doc$('notes/ID')
-//  this.db.col$('notes', ref => ref.where('user', '==', 'Jeff'))
-
-/// OR just like regular AngularFire
-
-//  noteRef: AngularFireList = this.db.doc('notes/ID');
-//  this.db.doc(noteRef)
-//  this.noteRef.valueChanges()
-
 
   doc$<T>(ref: DocPredicate<T>): Observable<T> {
     return this.doc(ref)
@@ -80,17 +50,6 @@ export class FirestoreService {
       );
   }
 
-// Custom Types
-
-//  type CollectionPredicate<T> = string | AngularFirestoreCollection<T>;
-//  type DocPredicate<T> = string | AngularFirestoreDocument<T>;
-
-  // Return a reference
-
-  /// **************
-  /// Get a Reference
-  /// **************
-
   col$<T>(ref: CollectionPredicate<T>, queryFn?): Observable<T[]> {
     return this.col(ref, queryFn)
       .snapshotChanges()
@@ -101,119 +60,183 @@ export class FirestoreService {
       );
   }
 
-/// Firebase Server Timestamp
-// Firestore does not automatically order data, 
-// so you need to have at least one property to order by
-// These methods wll add a server side timestamp to all documents in a collection
-// so you always have a way to order them in sequence
+  /// with Ids
+  colWithIds$<T>(ref: CollectionPredicate<T>, queryFn?): Observable<any[]> {
+    return this.col(ref, queryFn)
+      .snapshotChanges()
+      .pipe(
+        map((actions: DocumentChangeAction<T>[]) => {
+          return actions.map((a: DocumentChangeAction<T>) => {
+            // tslint:disable-next-line: ban-types
+            const data: Object = a.payload.doc.data() as T;
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          });
+        }),
+      );
+  }
 
-// *** Usage
+  /// **************
+  /// Write Data
+  /// **************
 
-//   db.update('items/ID', data) }) // adds updatedAt field
-//   db.set('items/ID', data) })    // adds createdAt field
-//   db.add('items', data) })       // adds createdAt field
+  /// Firebase Server Timestamp
+  get timestamp() {
+    return firebase.firestore.FieldValue.serverTimestamp();
+  }
 
-get timestamp() {
-  return firebase.firestore.FieldValue.serverTimestamp();
-}
+  set<T>(ref: DocPredicate<T>, data: any): Promise<void> {
+    const timestamp = this.timestamp;
+    return this.doc(ref).set({
+      ...data,
+      updatedAt: timestamp,
+      createdAt: timestamp,
+    });
+  }
 
-set<T>(ref: DocPredicate<T>, data: any): Promise<void> {
-  const timestamp = this.timestamp;
-  return this.doc(ref).set({
-    ...data,
-    updatedAt: timestamp,
-    createdAt: timestamp,
-  });
-}
+  update<T>(ref: DocPredicate<T>, data: any): Promise<void> {
+    return this.doc(ref).update({
+      ...data,
+      updatedAt: this.timestamp,
+    });
+  }
 
-update<T>(ref: DocPredicate<T>, data: any): Promise<void> {
-  return this.doc(ref).update({
-    ...data,
-    updatedAt: this.timestamp,
-  });
-}
+  delete<T>(ref: DocPredicate<T>): Promise<void> {
+    return this.doc(ref).delete();
+  }
 
-delete<T>(ref: DocPredicate<T>): Promise<void> {
-  return this.doc(ref).delete();
-}
+  add<T>(ref: CollectionPredicate<T>, data): Promise<firebase.firestore.DocumentReference> {
+    const timestamp = this.timestamp;
+    return this.col(ref).add({
+      ...data,
+      updatedAt: timestamp,
+      createdAt: timestamp,
+    });
+  }
 
-add<T>(ref: CollectionPredicate<T>, data): Promise<firebase.firestore.DocumentReference> {
-  const timestamp = this.timestamp;
-  return this.col(ref).add({
-    ...data,
-    updatedAt: timestamp,
-    createdAt: timestamp,
-  });
-}
+  geopoint(lat: number, lng: number): firebase.firestore.GeoPoint {
+    return new firebase.firestore.GeoPoint(lat, lng);
+  }
 
-//  *** Usert *** Usage
-//   this.db.upsert('notes/xyz', { content: 'hello dude'})
-// check if doc exists. If YES it will update non-destructively. 
-// If NO it will set a new document.
+  /// If doc exists update, otherwise set
+  upsert<T>(ref: DocPredicate<T>, data: any): Promise<void> {
+    const doc = this.doc(ref)
+      .snapshotChanges()
+      .pipe(take(1))
+      .toPromise();
 
-upsert<T>(ref: DocPredicate<T>, data: any): Promise<void> {
-  const doc = this.doc(ref)
-    .snapshotChanges()
-    .pipe(take(1))
-    .toPromise();
+    return doc.then((snap: Action<DocumentSnapshotDoesNotExist | DocumentSnapshotExists<T>>) => {
+      return snap.payload.exists ? this.update(ref, data) : this.set(ref, data);
+    });
+  }
 
-  return doc.then((snap: Action<DocumentSnapshotDoesNotExist | DocumentSnapshotExists<T>>) => {
-    return snap.payload.exists ? this.update(ref, data) : this.set(ref, data);
-  });
-}
+  /// **************
+  /// Inspect Data
+  /// **************
 
-// ** colWithIds   *** Usage
-//   db.colWithIds$('notes')
-//   get the collection items with their ID's
+  inspectDoc(ref: DocPredicate<any>): void {
+    const tick = new Date().getTime();
+    this.doc(ref)
+      .snapshotChanges()
+      .pipe(
+        take(1),
+        tap((d: Action<DocumentSnapshotDoesNotExist | DocumentSnapshotExists<any>>) => {
+          const tock = new Date().getTime() - tick;
+          console.log(`Loaded Document in ${tock}ms`, d);
+        }),
+      )
+      .subscribe();
+  }
 
+  inspectCol(ref: CollectionPredicate<any>): void {
+    const tick = new Date().getTime();
+    this.col(ref)
+      .snapshotChanges()
+      .pipe(
+        take(1),
+        tap((c: DocumentChangeAction<any>[]) => {
+          const tock = new Date().getTime() - tick;
+          console.log(`Loaded Collection in ${tock}ms`, c);
+        }),
+      )
+      .subscribe();
+  }
 
-colWithIds$<T>(ref: CollectionPredicate<T>, queryFn?): Observable<any[]> {
-  return this.col(ref, queryFn)
-    .snapshotChanges()
-    .pipe(
-      map((actions: DocumentChangeAction<T>[]) => {
-        return actions.map((a: DocumentChangeAction<T>) => {
-          // tslint:disable-next-line: ban-types
-          const data: Object = a.payload.doc.data() as T;
-          const id = a.payload.doc.id;
-          return { id, ...data };
-        });
+  /// **************
+  /// Create and read doc references
+  /// **************
+
+  /// create a reference between two documents
+  connect(host: DocPredicate<any>, key: string, doc: DocPredicate<any>) {
+    return this.doc(host).update({ [key]: this.doc(doc).ref });
+  }
+
+  /// returns a documents references mapped to AngularFirestoreDocument
+  docWithRefs$<T>(ref: DocPredicate<T>) {
+    return this.doc$(ref).pipe(
+      map((doc: T) => {
+        for (const k of Object.keys(doc)) {
+          if (doc[k] instanceof firebase.firestore.DocumentReference) {
+            doc[k] = this.doc(doc[k].path);
+          }
+        }
+        return doc;
       }),
     );
-}
+  }
 
-// *** Usage
+  /// **************
+  /// Atomic batch example
+  /// **************
 
-//    this.db.inspectDoc('notes/xyz')
-//    this.db.inspectCol('notes')
+  /// Just an example, you will need to customize this method.
+  atomic() {
+    const batch = firebase.firestore().batch();
+    /// add your operations here
 
-inspectDoc(ref: DocPredicate<any>): void {
-  const tick = new Date().getTime();
-  this.doc(ref)
-    .snapshotChanges()
-    .pipe(
+    const itemDoc = firebase.firestore().doc('items/myCoolItem');
+    const userDoc = firebase.firestore().doc('users/userId');
+
+    const currentTime = this.timestamp;
+
+    batch.update(itemDoc, { timestamp: currentTime });
+    batch.update(userDoc, { timestamp: currentTime });
+
+    /// commit operations
+    return batch.commit();
+  }
+
+  /**
+   * Delete a collection, in batches of batchSize. Note that this does
+   * not recursively delete subcollections of documents in the collection
+   * from: https://github.com/AngularFirebase/80-delete-firestore-collections/blob/master/src/app/firestore.service.ts
+   */
+  deleteCollection(path: string, batchSize: number): Observable<any> {
+    const source = this.deleteBatch(path, batchSize);
+
+    // expand will call deleteBatch recursively until the collection is deleted
+    return source.pipe(
+      expand(val => this.deleteBatch(path, batchSize)),
+      takeWhile(val => val > 0),
+    );
+  }
+
+  // Detetes documents as batched transaction
+  private deleteBatch(path: string, batchSize: number): Observable<any> {
+    const colRef = this.afs.collection(path, ref => ref.orderBy('__name__').limit(batchSize));
+
+    return colRef.snapshotChanges().pipe(
       take(1),
-      tap((d: Action<DocumentSnapshotDoesNotExist | DocumentSnapshotExists<any>>) => {
-        const tock = new Date().getTime() - tick;
-        console.log(`Loaded Document in ${tock}ms`, d);
+      mergeMap((snapshot: DocumentChangeAction<{}>[]) => {
+        // Delete documents in a batch
+        const batch = this.afs.firestore.batch();
+        snapshot.forEach(doc => {
+          batch.delete(doc.payload.doc.ref);
+        });
+
+        return from(batch.commit()).pipe(map(() => snapshot.length));
       }),
-    )
-    .subscribe();
+    );
+  }
 }
 
-inspectCol(ref: CollectionPredicate<any>): void {
-  const tick = new Date().getTime();
-  this.col(ref)
-    .snapshotChanges()
-    .pipe(
-      take(1),
-      tap((c: DocumentChangeAction<any>[]) => {
-        const tock = new Date().getTime() - tick;
-        console.log(`Loaded Collection in ${tock}ms`, c);
-      }),
-    )
-    .subscribe();
-}
-
-
-}
