@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Transaction } from '../../models/transaction';
 import { FirestoreService } from '../../services/firestore.service';
+import { FormGroup } from '@angular/forms';
+import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 
 
 @Component({
