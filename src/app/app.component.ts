@@ -82,8 +82,10 @@ export class AppComponent implements OnInit {
   }
 
   toggleLevel3(idx: string) {
+    console.log('idx string: ', idx);
     if (this.isLevel3Shown(idx)) {
       this.showLevel3 = null;
+      console.log('idx level 3 data: ', this.data);
     } else {
       this.showLevel2 = idx;
       this.showLevel3 = idx;
