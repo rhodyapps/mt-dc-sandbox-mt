@@ -13,7 +13,7 @@ import { Observable, from } from 'rxjs';
 import { map, tap, take, switchMap, mergeMap, expand, takeWhile } from 'rxjs/operators';
 
 // import * as firebase from 'firebase/app';
- import firebase from 'firebase/app';
+import firebase from 'firebase/app';
 
 type CollectionPredicate<T> = string | AngularFirestoreCollection<T>;
 type DocPredicate<T> = string | AngularFirestoreDocument<T>;
@@ -67,6 +67,7 @@ export class FirestoreService {
       .pipe(
         map((actions: DocumentChangeAction<T>[]) => {
           return actions.map((a: DocumentChangeAction<T>) => {
+            // tslint:disable-next-line: ban-types
             const data: Object = a.payload.doc.data() as T;
             const id = a.payload.doc.id;
             return { id, ...data };
