@@ -4,12 +4,29 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Transaction } from '../../models/transaction';
 import { FirestoreService } from '../../services/firestore.service';
 
+
 @Component({
   selector: 'app-dictionary',
   templateUrl: './dictionary.page.html',
   styleUrls: ['./dictionary.page.scss'],
 })
+
 export class DictionaryPage implements OnInit {
+  form = new FormGroup({});
+  model: any = {};
+  options: FormlyFormOptions = {};
+  fields: FormlyFieldConfig[] = [
+    {
+      key: 'Input',
+      type: 'input',
+      templateOptions: {
+        label: 'Input',
+        placeholder: 'Placeholder',
+        description: 'Description',
+        required: true,
+      },
+    },
+  ];
 
   ref: AngularFirestoreCollection<Transaction>;
   transactions: Observable<Transaction[]>;
