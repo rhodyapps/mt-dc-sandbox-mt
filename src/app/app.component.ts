@@ -20,8 +20,6 @@ export class AppComponent implements OnInit {
 
   public appPages: any; // add this for nested menus
 
-  // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-
   // add these for nested menus
   showLevel1 = null;
   showLevel2 = null;
