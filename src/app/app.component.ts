@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -16,6 +16,9 @@ import { LanguageService } from './services/language.service';
 })
 
 export class AppComponent implements OnInit {
+
+  @Input() collection: string;
+
   public selectedIndex = 0;
 
   public appPages: any; // add this for nested menus
@@ -51,11 +54,19 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     const path = window.location.pathname.split('home/')[1];
+   
+    this.collection = 'transaction';
+
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
       console.log('page',this.selectedIndex);
     }
   }
+
+  getCollection(col) {
+    this.collection = col;
+  }
+
   clearLevel() {
     this.showLevel1 = null;
     this.showLevel2 = null;

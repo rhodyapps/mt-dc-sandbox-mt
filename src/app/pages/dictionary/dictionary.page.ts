@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Transaction } from '../../models/transaction';
@@ -14,6 +14,9 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 })
 
 export class DictionaryPage implements OnInit {
+
+  @Input() collection: string;
+
   form = new FormGroup({});
   model: any = {};
   options: FormlyFormOptions = {};
@@ -38,7 +41,11 @@ export class DictionaryPage implements OnInit {
   ngOnInit() {
    // this.ref = this.afs.collection('transactions')
     // this.transactions = this.ref.valueChanges()
-     this.transactions = this.db.col$('transactions');
+    console.log('ngonInitBegin:', this.collection);
+    this.transactions = this.db.col$('transactions');
+    this.collection = 'test';
+    console.log('ngonInitEnd:', this.collection);
+
   }
 
 }
