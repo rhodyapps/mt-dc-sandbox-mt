@@ -1,0 +1,167 @@
+[
+    {
+    "name": "MEDITECH Expanse US",
+    "item": [
+        {
+            "name": "Dictionary Composer",
+            "item": [
+                {
+                    "name": "GCP Firestore Dictionaries",
+                    "item": [
+                        {
+                            "name": "AMB Category",
+                            "url": "/dictionary",
+                            "collection":"DC-AmbCategory"
+                        },
+{
+    "name": "EMR Document",
+    "url": "/recent",
+    "collection":"DC-EmrDoc"},
+{
+
+    "name": "EMR Doc Template",
+    "url": "/recent",
+    "collection":"DC-EmrDocTmpl"},
+{
+    "name": "EMR Doc Web",
+    "url": "/recent",
+    "collection":"DC-EmrDocWebTmpl"},
+{
+    "name": "EMR Note Category",
+    "url": "/recent",
+    "collection":"DC-EmrNoteCat"},
+{
+    "name": "Lab  B Test",
+    "url": "/recent",
+    "collection":"DC-LabBTest"},
+{
+    "name": "Lab C Site",
+    "url": "/recent",
+    "collection":"DC-LabCSite"},
+{
+    "name": "Lab L Test",
+    "url": "/recent",
+    "collection":"DC-LabLTest"},
+{
+    "name": "Lab M Procedure",
+    "url": "/recent",
+    "collection":"DC-LabMProc"},
+{
+    "name": "MIS Dir",
+    "url": "/recent",
+    "collection":"DC-MisDir"},
+{
+    "name": "MIS Doc Section",
+    "url": "/recent",
+    "collection":"DC-MisDocSect"},
+{
+    "name": "MIS Group Response",
+    "url": "/recent",
+    "collection":"DC-MisGroupResp"},
+{
+    "name": "MIS Holiday",
+    "url": "/recent",
+    "collection":"DC-MisHoliday"},
+{
+    "name": "MIS Instrument Type",
+    "url": "/recent",
+    "collection":"DC-MisInstType"},
+{
+    "name": "MIS Location",
+    "url": "/recent",
+    "collection":"DC-MisLoc"},
+{
+    "name": "MIS Monitor",
+    "url": "/recent",
+    "collection":"DC-MisMonitor"},
+{
+    "name": "MIS Mrb",
+    "url": "/recent",
+    "collection":"DC-MisMrb"},
+{
+    "name": "MIS Nomenclature Map",
+    "url": "/recent",
+    "collection":"DC-MisNomenclatureMap"},
+{
+    "name": "MIS Pos Neg",
+    "url": "/recent",
+    "collection":"DC-MisPosNeg"},
+{
+    "name": "MIS Provider Type",
+    "url": "/recent",
+    "collection":"DC-MisProvType"},
+{
+    "name": "MIS Query",
+    "url": "/recent",
+    "collection":"DC-MisQry"},
+{
+    "name": "MIS Query Group",
+    "url": "/recent",
+    "collection":"DC-MisQryGrp"},
+{
+    "name": "MIS Screen",
+    "url": "/recent",
+    "collection":"DC-MisScrn"},
+{
+    "name": "MIS Site",
+    "url": "/recent",
+    "collection":"DC-MisSite"},
+{
+    "name": "MIS Weight Category",
+    "url": "/recent",
+    "collection":"DC-MisWgtCat"},
+{
+    "name": "OM Category",
+    "url": "/recent",
+    "collection":"DC-OmCat"},
+{
+    "name": "OM Order",
+    "url": "/recent",
+    "collection":"DC-OmOrdDict"},
+{
+    "name": "PCS ACT Category",
+    "url": "/recent",
+    "collection":"DC-PcsActCat"},
+{
+    "name": "PCS Header",
+    "url": "/recent",
+    "collection":"DC-PcsHeader"},
+{
+    "name": "PCS Intervention",
+    "url": "/recent",
+    "collection":"DC-PcsIntervention"},
+{
+    "name": "PCS Protocol",
+    "url": "/recent",
+    "collection":"DC-PcsProt"},
+{
+    "name": "PHA Drug",
+    "url": "/recent",
+    "collection":"DC-PhaDrug"},
+{
+    "name": "PHA Routes of Admin",
+    "url": "/recent",
+    "collection":"DC-PhaRoutes"},
+{
+    "name": "PHA Units of Measure",
+    "url": "/recent",
+    "collection":"DC-PhaUnits"},
+{
+    "name": "RAD Category",
+    "url": "/recent",
+    "collection":"DC-RadCat"},
+{
+    "name": "RAD Procedure",
+    "url": "/recent",
+    "collection":"DC-RadProc"},
+{
+    "name": "REG Bed Status",
+    "url": "/recent",
+    "collection":"DC-RegBedStatus"}
+]
+                }
+            ]
+        }
+    ]
+}
+]

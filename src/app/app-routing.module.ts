@@ -71,6 +71,10 @@ const routes: Routes = [
   {
     path: 'dictionary',
     loadChildren: () => import ('./pages/dictionary/dictionary.module').then( m => m.DictionaryPageModule)
+  },
+  {
+    path: 'test1',
+    loadChildren: () => import('./pages/test1/test1.module').then( m => m.Test1PageModule)
   }
   /*{
     path: 'recent-list',
