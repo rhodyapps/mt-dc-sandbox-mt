@@ -10,7 +10,6 @@ export class Test1Page implements OnInit {
   @Input() name: string;
   @Input() testFunction: any;
 
-
   constructor() { }
 
   ngOnInit() {

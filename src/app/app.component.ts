@@ -40,6 +40,7 @@ export class AppComponent implements OnInit {
     this.data.getData().subscribe((resp) => {
       this.appPages = resp;
       console.log('menu data resp: ',this.appPages);
+      console.log('collection:',this.collection);
     });
   }
 
@@ -59,11 +60,12 @@ export class AppComponent implements OnInit {
 
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
-      console.log('page',this.selectedIndex);
+    //  console.log('app component page selected index:',this.selectedIndex);
     }
   }
 
   getCollection(col) {
+    console.log('col:',col);
     this.collection = col;
   }
 

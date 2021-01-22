@@ -6,7 +6,6 @@ import { FirestoreService } from '../../services/firestore.service';
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 
-
 @Component({
   selector: 'app-dictionary',
   templateUrl: './dictionary.page.html',
@@ -16,6 +15,9 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 export class DictionaryPage implements OnInit {
 
   @Input() collection: string;
+
+  @Input() name: string;
+  @Input() testFunction: any;
 
   form = new FormGroup({});
   model: any = {};
@@ -41,10 +43,9 @@ export class DictionaryPage implements OnInit {
   ngOnInit() {
    // this.ref = this.afs.collection('transactions')
     // this.transactions = this.ref.valueChanges()
-    console.log('ngonInitBegin:', this.collection);
+   // console.log('ngonInitBegin:', this.collection);
     this.transactions = this.db.col$('transactions');
-    this.collection = 'test';
-    console.log('ngonInitEnd:', this.collection);
+  //  this.collection = 'test';
 
   }
 
