@@ -14,10 +14,10 @@
                                 "collection":"DC-MisHoliday"
                             },
                             {
-                                "name": "Dictionary",
+                                "name": "Test Dictionary",
                                 "url": "/dictionary",
                                 "form": "transaction",
-                                "collection":"DC-MisHoliday"
+                                "collection":"DC-Test"
 
                             }
 
@@ -46,11 +46,11 @@
                         "item": [
                             {
                                 "name": "Lab Test",
-                                "url": "/recent"
+                                "url": "/dictionary"
                             },
                             {
                                 "name": "Loinc",
-                                "url": "/recent"
+                                "url": "/dictionary"
                             }
                         ]
                     },
@@ -59,11 +59,11 @@
                         "item": [
                             {
                                 "name": "Tests",
-                                "url": "/recent"
+                                "url": "/dictionary"
                             },
                             {
                                 "name": "Exams",
-                                "url": "/recent"
+                                "url": "/dictionary"
                             }
                         ]
                     }
@@ -82,11 +82,11 @@
                         "item": [
                             {
                                 "name": "item-2-1-1-1",
-                                "url": "/recent"
+                                "url": "/dictionary"
                             },
                             {
                                 "name": "item-2-1-1-2",
-                                "url": "/recent"
+                                "url": "/dictionary"
                             }
                         ]
                     },
@@ -95,11 +95,11 @@
                         "item": [
                             {
                                 "name": "item-2-1-2-1",
-                                "url": "/recent"
+                                "url": "/dictionary"
                             },
                             {
                                 "name": "item-2-1-2-2",
-                                "url": "/recent"
+                                "url": "/dictionary"
                             }
                         ]
                     }
@@ -113,11 +113,11 @@
                         "item": [
                             {
                                 "name": "item-2-2-1-1",
-                                "url": "/recent"
+                                "url": "/dictionary"
                             },
                             {
                                 "name": "item-2-2-1-2",
-                                "url": "/recent"
+                                "url": "/dictionary"
                             }
                         ]
                     },
@@ -126,11 +126,11 @@
                         "item": [
                             {
                                 "name": "item-2-2-2-1",
-                                "url": "/recent"
+                                "url": "/dictionary"
                             },
                             {
                                 "name": "item-2-2-2-2",
-                                "url": "/recent"
+                                "url": "/dictionary"
                             }
                         ]
                     }
@@ -142,7 +142,7 @@
         "name": "MAAS Dictionaries",
         "item": [ {
             "name": "item-3-1-1-1",
-            "url": "/recent"
+            "url": "/dictionary"
         }]
     },
     {
@@ -161,148 +161,148 @@
                             },
     {
         "name": "EMR Document",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-EmrDoc"},
     {
     
         "name": "EMR Doc Template",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-EmrDocTmpl"},
     {
         "name": "EMR Doc Web",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-EmrDocWebTmpl"},
     {
         "name": "EMR Note Category",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-EmrNoteCat"},
     {
         "name": "Lab  B Test",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-LabBTest"},
     {
         "name": "Lab C Site",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-LabCSite"},
     {
         "name": "Lab L Test",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-LabLTest"},
     {
         "name": "Lab M Procedure",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-LabMProc"},
     {
         "name": "MIS Dir",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-MisDir"},
     {
         "name": "MIS Doc Section",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-MisDocSect"},
     {
         "name": "MIS Group Response",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-MisGroupResp"},
     {
         "name": "MIS Holiday",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-MisHoliday"},
     {
         "name": "MIS Instrument Type",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-MisInstType"},
     {
         "name": "MIS Location",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-MisLoc"},
     {
         "name": "MIS Monitor",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-MisMonitor"},
     {
         "name": "MIS Mrb",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-MisMrb"},
     {
         "name": "MIS Nomenclature Map",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-MisNomenclatureMap"},
     {
         "name": "MIS Pos Neg",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-MisPosNeg"},
     {
         "name": "MIS Provider Type",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-MisProvType"},
     {
         "name": "MIS Query",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-MisQry"},
     {
         "name": "MIS Query Group",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-MisQryGrp"},
     {
         "name": "MIS Screen",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-MisScrn"},
     {
         "name": "MIS Site",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-MisSite"},
     {
         "name": "MIS Weight Category",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-MisWgtCat"},
     {
         "name": "OM Category",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-OmCat"},
     {
         "name": "OM Order",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-OmOrdDict"},
     {
         "name": "PCS ACT Category",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-PcsActCat"},
     {
         "name": "PCS Header",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-PcsHeader"},
     {
         "name": "PCS Intervention",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-PcsIntervention"},
     {
         "name": "PCS Protocol",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-PcsProt"},
     {
         "name": "PHA Drug",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-PhaDrug"},
     {
         "name": "PHA Routes of Admin",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-PhaRoutes"},
     {
         "name": "PHA Units of Measure",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-PhaUnits"},
     {
         "name": "RAD Category",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-RadCat"},
     {
         "name": "RAD Procedure",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-RadProc"},
     {
         "name": "REG Bed Status",
-        "url": "/recent",
+        "url": "/dictionary",
         "collection":"DC-RegBedStatus"}
     ]
                     }
