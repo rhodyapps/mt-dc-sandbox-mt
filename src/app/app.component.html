@@ -22,11 +22,11 @@
                       {{i2.name}}
                       <ul *ngIf="isLevel3Shown('idx'+i+'idx'+j+'idx'+k)" class="level3">
                         <li *ngFor="let i3 of i2.item; let l=index;" [routerLink]="[i3.url]">
-                         <!--
+                         
                            <p>col: {{i3.collection}}</p>
                           <p>url: {{i3.url}}</p>
                       <p>Collection: {{ this.collection }}</p>
-                         -->
+                         
                           <ion-menu-toggle auto-hide="false" class="first-level">{{i3.name}}</ion-menu-toggle>
                         </li>
                       </ul>
