@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content>
+  <p>Collection: {{ collection }}</p>
 <ul *ngFor="let transaction of transactions | async">
   <li>{{ transaction.mnemonic }} Mnemonic</li>
 </ul>

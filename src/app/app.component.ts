@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 // For nested menus add this:
 import { DataService } from './services/data.service';
 import { LanguageService } from './services/language.service';
+import { DictionaryPage } from './pages/dictionary/dictionary.page';
 
 
 @Component({
@@ -14,6 +15,7 @@ import { LanguageService } from './services/language.service';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
+
 
 export class AppComponent implements OnInit {
 
@@ -40,7 +42,7 @@ export class AppComponent implements OnInit {
     this.data.getData().subscribe((resp) => {
       this.appPages = resp;
       console.log('menu data resp: ',this.appPages);
-      console.log('collection:',this.collection);
+      console.log('default collection:',this.collection);
     });
   }
 
@@ -64,9 +66,10 @@ export class AppComponent implements OnInit {
     }
   }
 
-  getCollection(col) {
-    console.log('col:',col);
+  setCollection(col) {
+    console.log('set collection:',col);
     this.collection = col;
+    console.log('set collection, this.collection:',this.collection);
   }
 
   clearLevel() {
