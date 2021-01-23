@@ -31,21 +31,8 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 })
 
 export class DictionaryPage implements OnInit {
-  form = new FormGroup({});
+  
   model: any = {};
-  options: FormlyFormOptions = {};
-  fields: FormlyFieldConfig[] = [
-    {
-      key: 'Input',
-      type: 'input',
-      templateOptions: {
-        label: 'Input',
-        placeholder: 'Placeholder',
-        description: 'Description',
-        required: true,
-      },
-    },
-  ];
 
   ref: AngularFirestoreCollection<Transaction>;
   transactions: Observable<Transaction[]>;
@@ -55,7 +42,7 @@ export class DictionaryPage implements OnInit {
   ngOnInit() {
    // this.ref = this.afs.collection('transactions')
     // this.transactions = this.ref.valueChanges()
-     this.transactions = this.db.col$('transactions');
+     this.transactions = this.db.col$('test');
   }
 
 }
