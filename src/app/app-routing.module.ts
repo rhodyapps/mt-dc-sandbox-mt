@@ -24,7 +24,6 @@ const routes: Routes = [
   },
   { path: 'mis-holiday', loadChildren: './pages/recent-list/recent-list.module#RecentListPageModule'},
   { path: 'mis-holiday/:id', loadChildren: './pages/recent-details/recent-details.module#RecentDetailsPageModule' },
-  { path: 'dictionary', loadChildren: './pages/recent-details/recent-details.module#RecentDetailsPageModule' },
   { path: 'recent', loadChildren: './pages/recent-list/recent-list.module#RecentListPageModule' },
   { path: 'recent-detail', loadChildren: './pages/recent-details/recent-details.module#RecentDetailsPageModule' },
   { path: 'recent/:id', loadChildren: './pages/recent-details/recent-details.module#RecentDetailsPageModule' },
@@ -72,7 +71,12 @@ const routes: Routes = [
   {
     path: 'test1',
     loadChildren: () => import('./pages/test1/test1.module').then( m => m.Test1PageModule)
+  },
+  {
+    path: 'dictionary',
+    loadChildren: () => import('./pages/dictionary/dictionary.module').then( m => m.DictionaryPageModule)
   }
+
   /*{
     path: 'recent-list',
     loadChildren: () => import('./pages/recent-list/recent-list.module').then( m => m.RecentListPageModule)

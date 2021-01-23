@@ -152,7 +152,7 @@
                 "name": "Dictionary Composer",
                 "item": [
                     {
-                        "name": "GCP Firestore Dictionaries",
+                        "name": "Firestore Dictionaries",
                         "item": [
                             {
                                 "name": "AMB Category",
