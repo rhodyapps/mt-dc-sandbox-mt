@@ -9,7 +9,7 @@ export class DataService {
 
   // dataUrl = 'assets/data/menus-generic.json';
  // dataUrl = 'assets/data/menus-meditech-full-example.json';
- // dataUrl = 'assets/data/mis-holiday.json';
+ // dataUrl = 'assets/data/mt-menu-asp1.json';
  dataUrl = 'assets/data/mt-menu-1.json';
 
   constructor(private http: HttpClient) { }

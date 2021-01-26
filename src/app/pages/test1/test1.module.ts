@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DictionaryPageRoutingModule } from './dictionary-routing.module';
+import { Test1PageRoutingModule } from './test1-routing.module';
 
-import { DictionaryPage } from './dictionary.page';
+import { Test1Page } from './test1.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DictionaryPageRoutingModule
+    Test1PageRoutingModule
   ],
-  declarations: [DictionaryPage]
+  declarations: [Test1Page]
 })
-export class DictionaryPageModule {}
+export class Test1PageModule {}

@@ -1,0 +1,313 @@
+[
+    {
+        "name": "Expanse US Dictionaries",
+        "item": [
+            {
+                "name": "Standard Content",
+                "item": [
+                    {
+                        "name": "Non-Clinical Dictionaries",
+                        "item": [
+                            {
+                                "name": "Holiday",
+                                "url": "/recent",
+                                "collection":"DC-MisHoliday"
+                            },
+                            {
+                                "name": "Dictionary",
+                                "url": "/dictionary",
+                                "form": "transaction",
+                                "collection":"DC-MisHoliday"
+
+                            }
+
+                        ]
+                    },
+                    {
+                        "name": "Clinical Dictionaries",
+                        "item": [
+                            {
+                                "name": "Test",
+                                "url": "/test1"
+                            },
+                            {
+                                "name": "Interventions",
+                                "url": "/interventions"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Application Content",
+                "item": [
+                    {
+                        "name": "Laboratory",
+                        "item": [
+                            {
+                                "name": "Lab Test",
+                                "url": "/recent"
+                            },
+                            {
+                                "name": "Loinc",
+                                "url": "/recent"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Imaging",
+                        "item": [
+                            {
+                                "name": "Tests",
+                                "url": "/recent"
+                            },
+                            {
+                                "name": "Exams",
+                                "url": "/recent"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Expanse Canada Dictionaries",
+        "item": [
+            {
+                "name": "Standard Content",
+                "item": [
+                    {
+                        "name": "item-2-1-1",
+                        "item": [
+                            {
+                                "name": "item-2-1-1-1",
+                                "url": "/recent"
+                            },
+                            {
+                                "name": "item-2-1-1-2",
+                                "url": "/recent"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item-2-1-2",
+                        "item": [
+                            {
+                                "name": "item-2-1-2-1",
+                                "url": "/recent"
+                            },
+                            {
+                                "name": "item-2-1-2-2",
+                                "url": "/recent"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Application Content",
+                "item": [
+                    {
+                        "name": "item-2-2-1",
+                        "item": [
+                            {
+                                "name": "item-2-2-1-1",
+                                "url": "/recent"
+                            },
+                            {
+                                "name": "item-2-2-1-2",
+                                "url": "/recent"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item-2-2-2",
+                        "item": [
+                            {
+                                "name": "item-2-2-2-1",
+                                "url": "/recent"
+                            },
+                            {
+                                "name": "item-2-2-2-2",
+                                "url": "/recent"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "MAAS Dictionaries",
+        "item": [ {
+            "name": "item-3-1-1-1",
+            "url": "/recent"
+        }]
+    },
+    {
+    "name": "MT-ASP Dictionaries",
+    "item": [
+        {
+            "name": "Standard Content",
+            "item": [
+                {
+                    "name": "MEDITECH Dictionaries",
+                    "item": [
+                        {
+                            "name": "AMB Category",
+                            "url": "/dictionary",
+                            "collection":"DC-AmbCategory"
+                        },
+{
+    "name": "EMR Document",
+    "url": "/dictionary",
+    "collection":"DC-EmrDoc"},
+{
+
+    "name": "EMR Doc Template",
+    "url": "/dictionary",
+    "collection":"DC-EmrDocTmpl"},
+{
+    "name": "EMR Doc Web",
+    "url": "/dictionary",
+    "collection":"DC-EmrDocWebTmpl"},
+{
+    "name": "EMR Note Category",
+    "url": "/dictionary",
+    "collection":"DC-EmrNoteCat"},
+{
+    "name": "Lab  B Test",
+    "url": "/dictionary",
+    "collection":"DC-LabBTest"},
+{
+    "name": "Lab C Site",
+    "url": "/dictionary",
+    "collection":"DC-LabCSite"},
+{
+    "name": "Lab L Test",
+    "url": "/dictionary",
+    "collection":"DC-LabLTest"},
+{
+    "name": "Lab M Procedure",
+    "url": "/dictionary",
+    "collection":"DC-LabMProc"},
+{
+    "name": "MIS Dir",
+    "url": "/dictionary",
+    "collection":"DC-MisDir"},
+{
+    "name": "MIS Doc Section",
+    "url": "/dictionary",
+    "collection":"DC-MisDocSect"},
+{
+    "name": "MIS Group Response",
+    "url": "/dictionary",
+    "collection":"DC-MisGroupResp"},
+{
+    "name": "MIS Holiday",
+    "url": "/dictionary",
+    "collection":"DC-MisHoliday"},
+{
+    "name": "MIS Instrument Type",
+    "url": "/dictionary",
+    "collection":"DC-MisInstType"},
+{
+    "name": "MIS Location",
+    "url": "/dictionary",
+    "collection":"DC-MisLoc"},
+{
+    "name": "MIS Monitor",
+    "url": "/dictionary",
+    "collection":"DC-MisMonitor"},
+{
+    "name": "MIS Mrb",
+    "url": "/dictionary",
+    "collection":"DC-MisMrb"},
+{
+    "name": "MIS Nomenclature Map",
+    "url": "/dictionary",
+    "collection":"DC-MisNomenclatureMap"},
+{
+    "name": "MIS Pos Neg",
+    "url": "/dictionary",
+    "collection":"DC-MisPosNeg"},
+{
+    "name": "MIS Provider Type",
+    "url": "/dictionary",
+    "collection":"DC-MisProvType"},
+{
+    "name": "MIS Query",
+    "url": "/dictionary",
+    "collection":"DC-MisQry"},
+{
+    "name": "MIS Query Group",
+    "url": "/dictionary",
+    "collection":"DC-MisQryGrp"},
+{
+    "name": "MIS Screen",
+    "url": "/dictionary",
+    "collection":"DC-MisScrn"},
+{
+    "name": "MIS Site",
+    "url": "/dictionary",
+    "collection":"DC-MisSite"},
+{
+    "name": "MIS Weight Category",
+    "url": "/dictionary",
+    "collection":"DC-MisWgtCat"},
+{
+    "name": "OM Category",
+    "url": "/dictionary",
+    "collection":"DC-OmCat"},
+{
+    "name": "OM Order",
+    "url": "/dictionary",
+    "collection":"DC-OmOrdDict"},
+{
+    "name": "PCS ACT Category",
+    "url": "/dictionary",
+    "collection":"DC-PcsActCat"},
+{
+    "name": "PCS Header",
+    "url": "/dictionary",
+    "collection":"DC-PcsHeader"},
+{
+    "name": "PCS Intervention",
+    "url": "/dictionary",
+    "collection":"DC-PcsIntervention"},
+{
+    "name": "PCS Protocol",
+    "url": "/dictionary",
+    "collection":"DC-PcsProt"},
+{
+    "name": "PHA Drug",
+    "url": "/dictionary",
+    "collection":"DC-PhaDrug"},
+{
+    "name": "PHA Routes of Admin",
+    "url": "/dictionary",
+    "collection":"DC-PhaRoutes"},
+{
+    "name": "PHA Units of Measure",
+    "url": "/dictionary",
+    "collection":"DC-PhaUnits"},
+{
+    "name": "RAD Category",
+    "url": "/dictionary",
+    "collection":"DC-RadCat"},
+{
+    "name": "RAD Procedure",
+    "url": "/dictionary",
+    "collection":"DC-RadProc"},
+{
+    "name": "REG Bed Status",
+    "url": "/dictionary",
+    "collection":"DC-RegBedStatus"}
+]
+                }
+            ]
+        }
+    ]
+}
+]

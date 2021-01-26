@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 // For nested menus add this:
 import { DataService } from './services/data.service';
 import { LanguageService } from './services/language.service';
+import { DictionaryPage } from './pages/dictionary/dictionary.page';
 
 
 @Component({
@@ -15,7 +16,11 @@ import { LanguageService } from './services/language.service';
   styleUrls: ['app.component.scss']
 })
 
+
 export class AppComponent implements OnInit {
+
+  @Input() collection: string;
+
   public selectedIndex = 0;
 
   public appPages: any; // add this for nested menus
@@ -36,7 +41,8 @@ export class AppComponent implements OnInit {
     // call this inside the constructor to initialize menus
     this.data.getData().subscribe((resp) => {
       this.appPages = resp;
-      console.log("menu data resp: ",resp);
+      console.log('menu data resp: ',this.appPages);
+      console.log('default collection:',this.collection);
     });
   }
 
@@ -51,11 +57,21 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     const path = window.location.pathname.split('home/')[1];
+   
+    this.collection = 'transaction';
+
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
-      console.log("page",this.selectedIndex);
+    //  console.log('app component page selected index:',this.selectedIndex);
     }
   }
+
+  setCollection(col) {
+    console.log('set collection:',col);
+    this.collection = col;
+    console.log('set collection, this.collection:',this.collection);
+  }
+
   clearLevel() {
     this.showLevel1 = null;
     this.showLevel2 = null;

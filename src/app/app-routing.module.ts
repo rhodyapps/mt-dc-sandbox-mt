@@ -69,9 +69,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule)
   },
   {
+    path: 'test1',
+    loadChildren: () => import('./pages/test1/test1.module').then( m => m.Test1PageModule)
+  },
+  {
     path: 'dictionary',
-    loadChildren: () => import ('./pages/dictionary/dictionary.module').then( m => m.DictionaryPageModule)
+    loadChildren: () => import('./pages/dictionary/dictionary.module').then( m => m.DictionaryPageModule)
   }
+
   /*{
     path: 'recent-list',
     loadChildren: () => import('./pages/recent-list/recent-list.module').then( m => m.RecentListPageModule)
@@ -87,7 +92,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, paramsInheritanceStrategy: 'always'})
   ],
   exports: [RouterModule]
 })
