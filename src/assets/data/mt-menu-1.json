@@ -10,14 +10,22 @@
                         "item": [
                             {
                                 "name": "Holiday",
-                                "url": "/recent",
-                                "collection":"DC-MisHoliday"
+                                "url": "/dictionary",
+                                "collection":"DC-MisHoliday",
+                                "displayName":"MIS Holiday"
                             },
                             {
-                                "name": "Test Dictionary",
+                                "name": "Accommodation",
+                                "url": "/dictionary",
+                                "collection":"DC-MisAccom",
+                                "displayName":"MIS Accommodation"
+                            },
+                            {
+                                "name": "Transactions",
                                 "url": "/dictionary",
                                 "form": "transaction",
-                                "collection":"test"
+                                "collection":"transactions",
+                                "displayName": "Transactions"
 
                             }
 

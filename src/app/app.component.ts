@@ -19,7 +19,8 @@ import { DictionaryPage } from './pages/dictionary/dictionary.page';
 
 export class AppComponent implements OnInit {
 
-  @Input() collection: string;
+ // @Input() collection: string;
+ collection = 'test';
 
   public selectedIndex = 0;
 
@@ -41,8 +42,8 @@ export class AppComponent implements OnInit {
     // call this inside the constructor to initialize menus
     this.data.getData().subscribe((resp) => {
       this.appPages = resp;
-      console.log('menu data resp: ',this.appPages);
-      console.log('default collection:',this.collection);
+      console.log('menu data resp: ', this.appPages);
+      console.log('default collection:', this.collection);
     });
   }
 
