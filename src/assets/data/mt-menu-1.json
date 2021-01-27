@@ -15,11 +15,17 @@
                                 "displayName":"MIS Holiday"
                             },
                             {
-                                "name": "Test Dictionary",
+                                "name": "Accommodation",
+                                "url": "/dictionary",
+                                "collection":"DC-MisAccom",
+                                "displayName":"MIS Accommodation"
+                            },
+                            {
+                                "name": "Transactions",
                                 "url": "/dictionary",
                                 "form": "transaction",
-                                "collection":"test",
-                                "displayName": "Test"
+                                "collection":"transactions",
+                                "displayName": "Transactions"
 
                             }
 

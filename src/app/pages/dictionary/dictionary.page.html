@@ -1,13 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Firestore Collection: {{ displayName }} Enter/Edit</ion-title>
+    <ion-title>Dictionary: {{ displayName}} Enter/Edit</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <p>Collection: {{ collection }}</p>
 <ul *ngFor="let item of items | async">
-  <li>{{ item.mnemonic }} Mnemonic</li>
+  <li>{{ item.Mnemonic }} :{{ item.Name }}</li>
 </ul>
 
 </ion-content>

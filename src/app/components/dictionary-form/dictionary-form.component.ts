@@ -86,6 +86,7 @@ section;
    // console.log('DataSec', data.Sections[0]);
     console.log('data Name', data.Name);
   }
+  
 
   async createDocument() {
   //  const uid = await this.auth.uid();

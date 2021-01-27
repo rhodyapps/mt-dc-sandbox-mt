@@ -21,7 +21,7 @@
                       <ion-icon [name]="isLevel3Shown('idx'+i+'idx'+j+'idx'+k) ? 'arrow-down' : 'arrow-forward'" slot="end"></ion-icon>
                       {{i2.name}}
                       <ul *ngIf="isLevel3Shown('idx'+i+'idx'+j+'idx'+k)" class="level3">
-                        <li *ngFor="let i3 of i2.item; let l=index;" [routerLink]="[i3.url + '/'+ i3.collection + '/' + i3.displayName]" [state]="[i3.collection]">
+                        <li *ngFor="let i3 of i2.item; let l=index;" [routerLink]="[i3.url + '/'+ i3.collection + '/' + i3.name ]" [state]="[i3.collection]">
                         <!--  
   <p>Set Collection{{ setCollection(i3.collection)}}</p>
                           <p>url: {{i3.url}}</p>
