@@ -73,7 +73,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/test1/test1.module').then( m => m.Test1PageModule)
   },
   {
-    path: 'dictionary/:collection',
+    path: 'dictionary/:collection/:name',
     loadChildren: () => import('./pages/dictionary/dictionary.module').then( m => m.DictionaryPageModule)
   }
 
