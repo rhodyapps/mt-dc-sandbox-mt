@@ -21,7 +21,7 @@ getData() {
 
 getCollection() {
   console.log('getCollection in data service', this.collection);
-  return this.http.get(this.collection);
+ // return this.http.get(this.collection);
 }
 }
 

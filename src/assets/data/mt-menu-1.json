@@ -10,7 +10,7 @@
                         "item": [
                             {
                                 "name": "Holiday",
-                                "url": "/recent",
+                                "url": "/dictionary",
                                 "collection":"DC-MisHoliday"
                             },
                             {
