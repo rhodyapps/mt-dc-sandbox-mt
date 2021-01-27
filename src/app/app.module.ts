@@ -29,6 +29,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LanguagePopoverPageModule } from './pages/language-popover/language-popover.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DictionaryPageModule } from './pages/dictionary/dictionary.module';
 // import { FormlyModule } from '@ngx-formly/core';
 // import { FormlyIonicModule } from '@ngx-formly/ionic';
 export function createTranslateLoader(http: HttpClient) {
@@ -48,6 +49,7 @@ export function createTranslateLoader(http: HttpClient) {
     IonicStorageModule.forRoot(),
     AngularFireStorageModule,
     HttpClientModule,
+    DictionaryPageModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -21,7 +21,7 @@
                       <ion-icon [name]="isLevel3Shown('idx'+i+'idx'+j+'idx'+k) ? 'arrow-down' : 'arrow-forward'" slot="end"></ion-icon>
                       {{i2.name}}
                       <ul *ngIf="isLevel3Shown('idx'+i+'idx'+j+'idx'+k)" class="level3">
-                        <li *ngFor="let i3 of i2.item; let l=index;" [routerLink]="[i3.url]">
+                        <li *ngFor="let i3 of i2.item; let l=index;" [routerLink]="[i3.url]" [queryParams]="{collection: this.collection}">
                          
                            <p>Set Collection{{ setCollection(i3.collection)}}</p>
                           <p>url: {{i3.url}}</p>
@@ -29,6 +29,7 @@
                       <!--  
   <app-dictionary [collection]={{ i3.collection }}></app-dictionary>
                       -->
+                    
                           <ion-menu-toggle auto-hide="false" class="first-level">{{i3.name}}</ion-menu-toggle>
                         </li>
                       </ul>

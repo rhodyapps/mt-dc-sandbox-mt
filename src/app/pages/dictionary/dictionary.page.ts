@@ -31,7 +31,8 @@ export class DictionaryPage implements OnInit {
   
   model: any = {};
 
-  @Input() collection: string;
+  // @Input() collection: string;
+  collection: string;
 
   ref: AngularFirestoreCollection<Transaction>;
   transactions: Observable<Transaction[]>;
