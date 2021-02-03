@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '../translate.service';
+import { TranslateService } from '../../services/translate.service';
 
 @Component({
   selector: 'text-translate',
