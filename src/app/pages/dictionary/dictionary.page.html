@@ -5,9 +5,28 @@
 </ion-header>
 
 <ion-content>
-  <p>Collection: {{ collection }}</p>
-<ul *ngFor="let item of items | async">
-  <li>{{ item.Mnemonic }} :{{ item.Name }}</li>
-</ul>
+  <ion-segment>
+    <p>Collection: {{ collection }}</p>
+  </ion-segment>
+  
+  <ion-segment (ionChange)="updateFilter($event.detail.value)">
+    <ion-segment-button value="" checked>
+        All
+    </ion-segment-button>
+    <ion-segment-button value="complete">
+        Active
+    </ion-segment-button>
+    <ion-segment-button value="pending">
+        Inactive
+    </ion-segment-button>
+
+
+</ion-segment>
+
+  <ion-list>
+<ion-item *ngFor="let item of items | async; trackBy: trackById">
+  <span>{{ item.Mnemonic }} :{{ item.Name }}</span>
+</ion-item>
+</ion-list>
 
 </ion-content>

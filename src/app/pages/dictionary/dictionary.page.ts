@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { FirestoreService } from '../../services/firestore.service';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Transaction } from '../../models/transaction';
@@ -30,6 +30,8 @@ export class DictionaryPage implements OnInit {
 
   ref: AngularFirestoreCollection<Transaction>;
   items: Observable<Transaction[]>;
+  filter = new BehaviorSubject(null);
+
 
   constructor( private route: ActivatedRoute,
                public db: FirestoreService, private afs: AngularFirestore,
@@ -56,6 +58,16 @@ this.items = this.db.col$(this.collection);
   get(item: { id: any; }) {
     this.db.colWithIds$(item.id);
   }
+
+  trackById(_idx, item) {
+    return item.id;
+  }
+
+  updateFilter(val) {
+    this.filter.next(val);
+  }
+
+
 
   async PresentDocumentDetails() {
     const modal = await this.modalCtrl.create({
