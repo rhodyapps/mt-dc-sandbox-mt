@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { switchMap, map, shareReplay } from 'rxjs/operators';
 import { FirestoreService } from '../../services/firestore.service';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Transaction } from '../../models/transaction';
@@ -36,6 +37,8 @@ export class DictionaryPage implements OnInit {
   constructor( private route: ActivatedRoute,
                public db: FirestoreService, private afs: AngularFirestore,
                private modalCtrl: ModalController,
+               public modal: ModalController,
+
                private routerOutlet: IonRouterOutlet
                ) {}
 
@@ -47,11 +50,23 @@ this.route.params.subscribe(params => {
   console.log('dictionary page params.collection: ', params.collection, params.name);
 });
 
-this.items = this.db.col$(this.collection);
-
+// this.items = this.db.col$(this.collection);
+this.items = this.db.col$(this.collection, ref =>
+  ref
+  .where('MT_Universe', '==', 'MTX')
+  // .orderBy('Name', 'MT_ModifiedTime') // dont want to create indexes now
+  .limit(25)
+  ),
+  shareReplay(1);
   }
 
-  remove(item: { id: any; }) {
+  toggleStatus(item) {
+    const status = item.Active === 'Y' ? 'N' : 'P';
+    this.db.update(`items/${item.id}`, { status });
+  }
+
+
+  removeItem(item: { id: any; }) {
     this.db.delete(item.id);
   }
 
@@ -69,7 +84,7 @@ this.items = this.db.col$(this.collection);
 
 
 
-  async PresentDocumentDetails() {
+  async presentDictionaryForm(item?: any) {
     const modal = await this.modalCtrl.create({
       component: ModalBaseComponent,
       presentingElement: this.routerOutlet.nativeEl,
