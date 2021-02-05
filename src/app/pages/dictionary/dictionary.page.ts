@@ -51,7 +51,7 @@ this.route.params.subscribe(params => {
 });
 
 // this.items = this.db.col$(this.collection);
-this.items = this.db.col$(this.collection, ref =>
+this.items = this.db.colWithIds$(this.collection, ref =>
   ref
   .where('MT_Universe', '==', 'MTX')
   // .orderBy('Name', 'MT_ModifiedTime') // dont want to create indexes now
@@ -59,15 +59,24 @@ this.items = this.db.col$(this.collection, ref =>
   ),
   shareReplay(1);
   }
-
-  toggleStatus(item) {
+/*
+  toggleStatus(item: any) {
     const status = item.Active === 'Y' ? 'N' : 'P';
+    console.log('item id status: ', item.id, status);
     this.db.update(`items/${item.id}`, { status });
   }
+*/
 
+toggleStatus(item) {
+  const status = item.status === 'complete' ? 'pending' : 'complete';
+  const collection = this.collection;
+  console.log('collection toggle: ', collection, 'Item ', item);
+  this.db.update(collection, {item});
+}
 
   removeItem(item: { id: any; }) {
-    this.db.delete(item.id);
+    console.log('remove item data');
+        this.db.delete(item.id);
   }
 
   get(item: { id: any; }) {

@@ -49,18 +49,18 @@
 </ion-button>
  -->
 
-<ion-button [routerLink]="item.id" color="light">
+
+<ion-button [routerLink]="item.id" slot="end" color="light">
   <ion-icon name="eye"></ion-icon>
 </ion-button>
 
-<ion-button (click)="presentDictionaryForm(item)" color="light">
+<ion-button (click)="presentDictionaryForm(item)" slot="end" color="light">
   <ion-icon name="create-outline"></ion-icon>
 </ion-button>
 
-<ion-button (click)="removeItem(item)" color="danger-tint">
+<ion-button (click)="toggleStatus(item)" slot="end" color="light">
   <ion-icon name="trash-outline"></ion-icon>
 </ion-button>
-
 
 </ion-item>
 </ion-list>
