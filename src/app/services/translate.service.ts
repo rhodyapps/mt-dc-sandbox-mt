@@ -33,9 +33,15 @@ export class TranslateService {
 
   constructor() { }
 
-  createTranslation() {
-    console.log.('Translate');
+  createTranslation(text: string) {
+    // create new translation, then return it as an object observable
+    const data = { 'english': text }
+
+   // const key = this.db.list('/translations').push(data).key
+
+    return console.log('translation',data)
   }
     
    
 }
+
