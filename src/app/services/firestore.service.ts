@@ -101,6 +101,18 @@ export class FirestoreService {
       updatedAt: this.timestamp,
     });
   }
+     
+  updateAt(path: string, data: Object): Promise<any> {
+    const segments = path.split('/').filter(v => v);
+    if (segments.length % 2) {
+      // Odd is always a collection
+      return this.afs.collection(path).add(data);
+    } else {
+      // Even is always document
+      return this.afs.doc(path).set(data, { merge: true });
+    }
+  }
+  
 
   delete<T>(ref: DocPredicate<T>): Promise<void> {
     return this.doc(ref).delete();
