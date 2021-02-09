@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class DbService {
 
+
   constructor(private afs: AngularFirestore) { }
 
   collection$(path, query?) {
@@ -56,6 +57,7 @@ doc$(path): Observable<any> {
 
     }
     }
+
 delete(path) {
   console.log('db Delete', path);
   return this.afs.doc(path).delete();

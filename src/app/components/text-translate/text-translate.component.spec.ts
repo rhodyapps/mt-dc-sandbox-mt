@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { DictionaryFormComponent } from './dictionary-form.component';
+import { TextTranslateComponent } from './text-translate.component';
 
-describe('DictionaryFormComponent', () => {
-  let component: DictionaryFormComponent;
-  let fixture: ComponentFixture<DictionaryFormComponent>;
+describe('TextTranslateComponent', () => {
+  let component: TextTranslateComponent;
+  let fixture: ComponentFixture<TextTranslateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DictionaryFormComponent ],
+      declarations: [ TextTranslateComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DictionaryFormComponent);
+    fixture = TestBed.createComponent(TextTranslateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
