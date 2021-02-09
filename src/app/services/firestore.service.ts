@@ -60,6 +60,7 @@ export class FirestoreService {
       );
   }
 
+
   /// with Ids
   colWithIds$<T>(ref: CollectionPredicate<T>, queryFn?): Observable<any[]> {
     return this.col(ref, queryFn)
@@ -104,6 +105,7 @@ export class FirestoreService {
      
   updateAt(path: string, data: Object): Promise<any> {
     const segments = path.split('/').filter(v => v);
+    console.log('firestore svc: ',segments);
     if (segments.length % 2) {
       // Odd is always a collection
       return this.afs.collection(path).add(data);
@@ -115,6 +117,7 @@ export class FirestoreService {
   
 
   delete<T>(ref: DocPredicate<T>): Promise<void> {
+    console.log('firestore delete', ref);
     return this.doc(ref).delete();
   }
 

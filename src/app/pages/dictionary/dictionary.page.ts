@@ -31,6 +31,7 @@ export class DictionaryPage implements OnInit {
 
   ref: AngularFirestoreCollection<Transaction>;
   items: Observable<Transaction[]>;
+  // items;
   filter = new BehaviorSubject(null);
 
 
@@ -65,7 +66,7 @@ this.items = this.db.colWithIds$(this.collection, ref =>
     console.log('item id status: ', item.id, status);
     this.db.update(`items/${item.id}`, { status });
   }
-*/
+
 
 toggleStatus(item) {
   const status = item.status === 'complete' ? 'pending' : 'complete';
@@ -73,6 +74,14 @@ toggleStatus(item) {
   console.log('collection toggle: ', collection, 'Item ', item);
   this.db.update(collection, {item});
 }
+*/
+
+toggleStatus(item) {
+  const status = item.status === 'complete' ? 'pending' : 'complete';
+  this.db.updateAt(`items/${item.id}`, { status });
+  console.log('togglestatus', status, 'item ', item);
+}
+
 
   removeItem(item: { id: any; }) {
     console.log('remove item data');

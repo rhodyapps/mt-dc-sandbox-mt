@@ -41,7 +41,5 @@ export class TranslateService {
 
     return console.log('translation',data)
   }
-    
-   
 }
 
