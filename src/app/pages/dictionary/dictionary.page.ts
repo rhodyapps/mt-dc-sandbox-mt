@@ -15,6 +15,8 @@ import {
 import { Router } from '@angular/router';
 import { ModalBaseComponent } from '../../components/modal-base/modal-base.component';
 import { RecentDetailsPage } from '../../pages/recent-details/recent-details.page';
+import { DictionaryFormPage } from '../dictionary-form/dictionary-form.page';
+import { DictionaryDetailFormComponent } from 'src/app/components/dictionary-detail-form/dictionary-detail-form.component';
 
 @Component({
   selector: 'app-dictionary',
@@ -101,18 +103,39 @@ toggleStatus(item) {
   }
 
 
-
   async presentDictionaryForm(item?: any) {
+   
+   console.log('present form ', item);
+    const modal = await this.modal.create({
+      component: DictionaryFormPage,
+      componentProps: { item }
+    });
+    return await modal.present();
+  }
+
+
+  async presentDictionaryForm4(item?: any) {
+    console.log('present form 2 ', item);
     const modal = await this.modalCtrl.create({
       component: ModalBaseComponent,
       presentingElement: this.routerOutlet.nativeEl,
       swipeToClose: true,
       componentProps: {
-        rootPage: RecentDetailsPage,
+        rootPage: DictionaryFormPage
       },
     });
 
     await modal.present();
 }
+
+async presentDictionaryForm2(item?: any) {
+  console.log('present form 3 ', item);
+  const modal = await this.modal.create({
+     component: DictionaryDetailFormComponent,
+     componentProps: { item }
+   });
+   return await modal.present();
+ }
+
 
 }

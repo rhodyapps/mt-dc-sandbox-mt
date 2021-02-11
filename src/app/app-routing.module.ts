@@ -75,6 +75,10 @@ const routes: Routes = [
   {
     path: 'dictionary/:collection/:name',
     loadChildren: () => import('./pages/dictionary/dictionary.module').then( m => m.DictionaryPageModule)
+  },
+  {
+    path: 'dictionary-form',
+    loadChildren: () => import('./pages/dictionary-form/dictionary-form.module').then( m => m.DictionaryFormPageModule)
   }
 
   /*{
