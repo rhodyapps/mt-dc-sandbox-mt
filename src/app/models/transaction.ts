@@ -1,5 +1,5 @@
 export interface Transaction {
-  // Firebase 
+  // Firebase transaction
     id?: string;
     collection?: string;
     release?: string;
@@ -12,6 +12,22 @@ export interface Transaction {
     createdAt?: number;
     createdByUser?: string;
     notes?: string;
+    mtDatabase?: string;
+    mtDictionary?: string;
+    mtDocumentName?: string;
+    mtActive?: string;
+    mtExportTime?: string;
+    mtHcis?: string;
+    mtHcisInt?: string;
+    mtModifiedTime?: string;
+    mtOid?: string;
+    mtRelease?: string;
+    mtReleaseInt?: string;
+    mtUniverse?: string;
+    mtMnemonic?: string;
+    mtName?: string;
+
+
 // MEDITECH
     Active?: string;
     Holidays?: Holiday[];

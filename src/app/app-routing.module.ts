@@ -79,6 +79,14 @@ const routes: Routes = [
   {
     path: 'dictionary-form',
     loadChildren: () => import('./pages/dictionary-form/dictionary-form.module').then( m => m.DictionaryFormPageModule)
+  },
+  {
+    path: 'dictionary-detail',
+    loadChildren: () => import('./page/dictionary-detail/dictionary-detail.module').then( m => m.DictionaryDetailPageModule)
+  },
+  {
+    path: 'dictionary-detail',
+    loadChildren: () => import('./pages/dictionary-detail/dictionary-detail.module').then( m => m.DictionaryDetailPageModule)
   }
 
   /*{

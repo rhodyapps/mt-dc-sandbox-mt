@@ -4,6 +4,7 @@ import { switchMap, map, shareReplay } from 'rxjs/operators';
 import { FirestoreService } from '../../services/firestore.service';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Transaction } from '../../models/transaction';
+import { TranslateModule } from '@ngx-translate/core';
 // import { DataService } from '../../services/data.service';
 import {ActivatedRoute} from '@angular/router';
 // import { map } from 'rxjs/operators';
@@ -17,6 +18,7 @@ import { ModalBaseComponent } from '../../components/modal-base/modal-base.compo
 import { RecentDetailsPage } from '../../pages/recent-details/recent-details.page';
 import { DictionaryFormPage } from '../dictionary-form/dictionary-form.page';
 import { DictionaryDetailFormComponent } from 'src/app/components/dictionary-detail-form/dictionary-detail-form.component';
+import { DictionaryDetailPage } from '../dictionary-detail/dictionary-detail.page';
 
 @Component({
   selector: 'app-dictionary',
@@ -87,7 +89,7 @@ toggleStatus(item) {
 
   removeItem(item: { id: any; }) {
     console.log('remove item data');
-        this.db.delete(item.id);
+    this.db.delete(item.id);
   }
 
   get(item: { id: any; }) {
@@ -104,38 +106,38 @@ toggleStatus(item) {
 
 
   async presentDictionaryForm(item?: any) {
-   
+
    console.log('present form ', item);
-    const modal = await this.modal.create({
+   const modal = await this.modal.create({
       component: DictionaryFormPage,
       componentProps: { item }
     });
-    return await modal.present();
+   return await modal.present();
   }
 
 
-  async presentDictionaryForm4(item?: any) {
-    console.log('present form 2 ', item);
-    const modal = await this.modalCtrl.create({
-      component: ModalBaseComponent,
-      presentingElement: this.routerOutlet.nativeEl,
-      swipeToClose: true,
-      componentProps: {
-        rootPage: DictionaryFormPage
-      },
-    });
+ 
+async presentDictionaryForm4(item?: any, collection?: any) {
+  console.log('present form 4 ', item, 'collection ', this.collection);
+  collection = this.collection;
+  const modal = await this.modal.create({
+     component: DictionaryDetailPage,
+ //    componentProps: { item, collection }
+   });
+  return await modal.present();
+ }
 
-    await modal.present();
-}
-
-async presentDictionaryForm2(item?: any) {
-  console.log('present form 3 ', item);
+async presentDictionaryForm2(item?: any, collection?: any) {
+  console.log('present form 2 ', item, 'collection ', this.collection);
+  collection = this.collection;
   const modal = await this.modal.create({
      component: DictionaryDetailFormComponent,
-     componentProps: { item }
+     componentProps: { item, collection }
    });
-   return await modal.present();
+  return await modal.present();
  }
+
+
 
 
 }

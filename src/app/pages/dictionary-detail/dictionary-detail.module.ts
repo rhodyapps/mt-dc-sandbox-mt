@@ -4,18 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DictionaryPageRoutingModule } from './dictionary-routing.module';
+import { DictionaryDetailPageRoutingModule } from './dictionary-detail-routing.module';
+
+import { DictionaryDetailPage } from './dictionary-detail.page';
 import { TranslateModule } from '@ngx-translate/core';
-import { DictionaryPage } from './dictionary.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TranslateModule,
-    DictionaryPageRoutingModule
+    DictionaryDetailPageRoutingModule,
+    TranslateModule
   ],
-  declarations: [DictionaryPage]
+  declarations: [DictionaryDetailPage]
 })
-export class DictionaryPageModule {}
+export class DictionaryDetailPageModule {}

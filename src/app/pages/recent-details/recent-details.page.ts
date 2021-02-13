@@ -11,6 +11,7 @@ import { NavController, LoadingController } from '@ionic/angular';
 })
 export class RecentDetailsPage implements OnInit {
 
+  
   transaction: Transaction = {
     project: 'test',
     collection: 'DC-Mis-Holiday',
