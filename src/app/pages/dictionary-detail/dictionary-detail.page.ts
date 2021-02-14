@@ -79,7 +79,7 @@ itemInit() {
   this.transaction.mtDatabase = this.item.MT_Database;
   this.transaction.mtDictionary = this.item.MT_Dictionary;
   this.transaction.mtHcis = this.item.MT_HCIS;
-  this.transaction.id = this.transactionId;
+  // this.transaction.id = this.transactionId;
   this.transaction.mtMnemonic = this.item.Mnemonic;
   this.transaction.mtName = this.item.Name;
   this.transaction.mtActive = this.item.Active;

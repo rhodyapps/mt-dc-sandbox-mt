@@ -30,21 +30,63 @@ export class RecentDetailsPage implements OnInit {
   };
 
   transactionId = null;
+  // item: {};
+  
+  // itemForm: FormGroup;
+  item: {[key: string]: string };
+
+  collection: string;
  
   // tslint:disable-next-line: max-line-length
   constructor(private route: ActivatedRoute, public nav: NavController, private transactionService: TransactionService, private loadingController: LoadingController) { }
  
   ngOnInit() {
     // tslint:disable-next-line: no-string-literal
+    const data = {
+      content: '',
+      status: 'pending',
+      ...this.item
+    };
+
     this.transactionId = this.route.snapshot.params['id'];
+    
+    this.itemInit();
+    console.log('recent details page ', this.item);
     if (this.transactionId)  {
       this.loadTransaction();
+      console.log('load transaction ', this.transaction);
     }
   }
 
+  itemInit() {
+    console.log('itemInit item: ', this.item);
+   // this.transaction.project =  this.item.project;
+    this.transaction.collection = this.collection;
+    /*
+    this.transaction.mtUniverse = this.item.MT_Universe;
+    this.transaction.mtDatabase = this.item.MT_Database;
+    this.transaction.mtDictionary = this.item.MT_Dictionary;
+    this.transaction.mtHcis = this.item.MT_HCIS;
+    // this.transaction.id = this.transactionId;
+    this.transaction.mtMnemonic = this.item.Mnemonic;
+    this.transaction.mtName = this.item.Name;
+    this.transaction.mtActive = this.item.Active;
+    // this.transaction.createdAt: new Date().getTime(),
+    // mtExportTime: '',
+    // mtHcis: '',
+    this.transaction.mtModifiedTime = this.item.MT_ModifiedTime;
+    this.transaction.mtOid = this.item.MT_OID;
+    this.transaction.mtRelease = this.item.MT_Release;
+    this.transaction.mtUniverse = this.item.MT_Universe;
+    */
+    console.log('itemInit: transaction', this.transaction);
+  
+  }
+  
+
   async loadTransaction() {
     const loading = await this.loadingController.create({
-      message: 'Loading Transaction...'
+      message: 'Loading Transaction...',
     });
     await loading.present();
  

@@ -80,9 +80,10 @@ async PresentDocumentDetails(item?: any, collection?: any) {
     component: ModalBaseComponent,
     presentingElement: this.routerOutlet.nativeEl,
     swipeToClose: true,
-    componentProps: {
-      rootPage: RecentDetailsPage,
-    },
+    componentProps: { rootPage: RecentDetailsPage, item, collection }
+  //  componentProps: {
+   //   rootPage: RecentDetailsPage,
+  //  },
   });
 
   await modal.present();
