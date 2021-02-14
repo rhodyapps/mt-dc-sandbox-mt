@@ -44,3 +44,23 @@
   </ion-item>
   
 </ion-content>
+
+<ion-footer *ngIf="!transaction.id">
+  <ion-toolbar color="success">
+    <ion-button expand="full" fill="clear" color="light" (click)="saveTransaction()">
+      <ion-icon name="checkmark" slot="start"></ion-icon>
+      Add Dictionary Transaction
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
+ 
+<ion-footer *ngIf="transaction.id">
+  <ion-row no-padding text-center>
+    <ion-col size="6">
+      <ion-button expand="block" fill="solid" color="success" (click)="saveTransaction()">
+        <ion-icon name="save" slot="start"></ion-icon>
+        Update
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

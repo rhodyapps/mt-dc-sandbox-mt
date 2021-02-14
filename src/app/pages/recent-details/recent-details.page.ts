@@ -14,11 +14,17 @@ export class RecentDetailsPage implements OnInit {
   
   transaction: Transaction = {
     project: 'test',
-    collection: 'DC-Mis-Holiday',
-    name: 'name',
-    mnemonic: 'mnemonic',
-    active: 'Y',
+    collection: '',
+    mtMnemonic: '',
+    mtName: '',
+    mtActive: '',
     createdAt: new Date().getTime(),
+    mtExportTime: '',
+    mtHcis: '',
+    mtModifiedTime: '',
+    mtOid: '',
+    mtRelease: '',
+    mtUniverse: '',
     priority: 2,
     notes: ''
   };
@@ -61,6 +67,7 @@ export class RecentDetailsPage implements OnInit {
         this.nav.navigateBack('home');
       });
     } else {
+
       this.transactionService.addTransaction(this.transaction).then(() => {
         loading.dismiss();
         this.nav.navigateBack('home');

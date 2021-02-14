@@ -24,6 +24,7 @@ export class RecentListPage implements OnInit {
 
   private Transactions: Observable<Transaction[]>;
 
+  collection = 'transactions';
 
   constructor(private transactionService: TransactionService,
               private modalCtrl: ModalController,
@@ -47,8 +48,34 @@ remove(item: { id: any; }) {
 get(item: { id: any; }) {
   this.transactionService.getTransaction(item.id);
 }
+/*
+itemInit() {
+  console.log('itemInit item: ', this.item);
+ // this.transaction.project =  this.item.project;
+  this.transaction.collection = this.collection;
+  this.transaction.mtUniverse = this.item.MT_Universe;
+  this.transaction.mtDatabase = this.item.MT_Database;
+  this.transaction.mtDictionary = this.item.MT_Dictionary;
+  this.transaction.mtHcis = this.item.MT_HCIS;
+  this.transaction.id = this.transactionId;
+  this.transaction.mtMnemonic = this.item.Mnemonic;
+  this.transaction.mtName = this.item.Name;
+  this.transaction.mtActive = this.item.Active;
+  // this.transaction.createdAt: new Date().getTime(),
+  // mtExportTime: '',
+  // mtHcis: '',
+  this.transaction.mtModifiedTime = this.item.MT_ModifiedTime;
+  this.transaction.mtOid = this.item.MT_OID;
+  this.transaction.mtRelease = this.item.MT_Release;
+  this.transaction.mtUniverse = this.item.MT_Universe;
+  console.log('itemInit: ', this.transaction);
+}
+*/
 
-async PresentDocumentDetails() {
+async PresentDocumentDetails(item?: any, collection?: any) {
+  console.log('recents - present document details item', item);
+  console.log('present form item:', item, 'collection ', this.collection);
+  collection = this.collection;
   const modal = await this.modalCtrl.create({
     component: ModalBaseComponent,
     presentingElement: this.routerOutlet.nativeEl,

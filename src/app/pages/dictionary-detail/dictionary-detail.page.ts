@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { ModalController } from '@ionic/angular';
+import { LoadingController, ModalController, NavController } from '@ionic/angular';
 import { FirestoreService } from 'src/app/services/firestore.service';
+import { TransactionService } from 'src/app/services/transaction.service';
 import { Transaction } from '../../models/transaction';
+
 
 @Component({
   selector: 'app-dictionary-detail',
@@ -12,9 +14,13 @@ import { Transaction } from '../../models/transaction';
 })
 export class DictionaryDetailPage implements OnInit {
 
+
   constructor(private db: FirestoreService,
               private route: ActivatedRoute,
               private modal: ModalController,
+              public nav: NavController,
+              private transactionService: TransactionService, 
+              private loadingController: LoadingController,
               private fb: FormBuilder) { }
 
               itemForm: FormGroup;
@@ -73,7 +79,7 @@ itemInit() {
   this.transaction.mtDatabase = this.item.MT_Database;
   this.transaction.mtDictionary = this.item.MT_Dictionary;
   this.transaction.mtHcis = this.item.MT_HCIS;
-  this.transaction.id = this.item.id;
+  this.transaction.id = this.transactionId;
   this.transaction.mtMnemonic = this.item.Mnemonic;
   this.transaction.mtName = this.item.Name;
   this.transaction.mtActive = this.item.Active;
@@ -86,6 +92,27 @@ itemInit() {
   this.transaction.mtUniverse = this.item.MT_Universe;
   console.log('itemInit: ', this.transaction);
 
+}
+
+async saveTransaction() {
+ 
+  const loading = await this.loadingController.create({
+    message: 'Saving Transaction..'
+  });
+  await loading.present();
+
+  if (this.transactionId) {
+    this.transactionService.updateTransaction(this.transaction, this.transactionId).then(() => {
+      loading.dismiss();
+      this.nav.navigateBack('home');
+    });
+  } else {
+    console.log('add this transaction: ', this.transaction);
+    this.transactionService.addTransaction(this.transaction).then(() => {
+      loading.dismiss();
+      this.nav.navigateBack('home');
+    });
+  }
 }
 
 }
