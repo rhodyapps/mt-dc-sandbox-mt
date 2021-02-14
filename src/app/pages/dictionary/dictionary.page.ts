@@ -17,7 +17,7 @@ import { Router } from '@angular/router';
 import { ModalBaseComponent } from '../../components/modal-base/modal-base.component';
 import { RecentDetailsPage } from '../../pages/recent-details/recent-details.page';
 import { DictionaryFormPage } from '../dictionary-form/dictionary-form.page';
-import { DictionaryDetailFormComponent } from 'src/app/components/dictionary-detail-form/dictionary-detail-form.component';
+// import { DictionaryDetailFormComponent } from 'src/app/components/dictionary-detail-form/dictionary-detail-form.component';
 import { DictionaryDetailPage } from '../dictionary-detail/dictionary-detail.page';
 
 @Component({
@@ -103,22 +103,9 @@ toggleStatus(item) {
   updateFilter(val) {
     this.filter.next(val);
   }
-
-
-  async presentDictionaryForm(item?: any) {
-
-   console.log('present form ', item);
-   const modal = await this.modal.create({
-      component: DictionaryFormPage,
-      componentProps: { item }
-    });
-   return await modal.present();
-  }
-
-
  
-async presentDictionaryForm4(item?: any, collection?: any) {
-  console.log('present form 4 item:', item.id, 'collection ', this.collection);
+async presentDictionaryForm(item?: any, collection?: any) {
+  console.log('present form item:', item.id, 'collection ', this.collection);
   collection = this.collection;
   const modal = await this.modal.create({
      component: DictionaryDetailPage,
@@ -127,15 +114,7 @@ async presentDictionaryForm4(item?: any, collection?: any) {
   return await modal.present();
  }
 
-async presentDictionaryForm2(item?: any, collection?: any) {
-  console.log('present form 2 ', item, 'collection ', this.collection);
-  collection = this.collection;
-  const modal = await this.modal.create({
-     component: DictionaryDetailFormComponent,
-     componentProps: { item, collection }
-   });
-  return await modal.present();
- }
+
 
 
 
