@@ -118,11 +118,11 @@ toggleStatus(item) {
 
  
 async presentDictionaryForm4(item?: any, collection?: any) {
-  console.log('present form 4 ', item, 'collection ', this.collection);
+  console.log('present form 4 item:', item.id, 'collection ', this.collection);
   collection = this.collection;
   const modal = await this.modal.create({
      component: DictionaryDetailPage,
- //    componentProps: { item, collection }
+    componentProps: { item, collection }
    });
   return await modal.present();
  }

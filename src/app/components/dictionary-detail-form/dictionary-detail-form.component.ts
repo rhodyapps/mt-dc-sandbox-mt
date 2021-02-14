@@ -15,7 +15,7 @@ import { KeyValue } from '@angular/common';
 export class DictionaryDetailFormComponent implements OnInit {
 
   constructor(private db: FirestoreService,
-    private route: ActivatedRoute,
+              private route: ActivatedRoute,
               private modal: ModalController,
               private fb: FormBuilder) { }
 /*
@@ -118,14 +118,14 @@ Active?: string;
       }
 
   ngOnInit() {
-   
+
     const data = {
       content: '',
       status: 'pending',
       ...this.item
     };
-    
-    console.log('detail form collection ',this.collection, ' data ', data);
+
+    console.log('detail form collection ', this.collection, ' data ', data);
     this.itemForm = this.fb.group(
       {
         content: [
@@ -139,7 +139,7 @@ Active?: string;
         status: [data.status, [Validators.required]]
       }
     );
-  };
+  }
 }
 
 /*
