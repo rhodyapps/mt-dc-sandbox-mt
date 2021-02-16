@@ -82,10 +82,6 @@ const routes: Routes = [
   },
   {
     path: 'dictionary-detail',
-    loadChildren: () => import('./page/dictionary-detail/dictionary-detail.module').then( m => m.DictionaryDetailPageModule)
-  },
-  {
-    path: 'dictionary-detail',
     loadChildren: () => import('./pages/dictionary-detail/dictionary-detail.module').then( m => m.DictionaryDetailPageModule)
   }
 
