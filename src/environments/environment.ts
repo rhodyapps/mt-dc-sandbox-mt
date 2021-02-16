@@ -4,6 +4,7 @@ export const environment = {
   production: false,
 firebase:  {
  // mt-dc-ra rhodyapps
+  /*
   apiKey: "AIzaSyB3K1Cm_ZyY0dUGXdaM_ye1zwpJeb06dGc",
     authDomain: "mt-dc-ra.firebaseapp.com",
     projectId: "mt-dc-ra",
@@ -11,8 +12,8 @@ firebase:  {
     messagingSenderId: "978507752529",
     appId: "1:978507752529:web:5d810c3f19ed28be13c470",
     measurementId: "G-3NGRWXW7BF"
-
-  /*  Meditech Authorspace
+*/
+  // Meditech Authorspace
   apiKey: "AIzaSyAUuJTPpBnX-qPYyFomUiUQVL9RJS9EPpc",
     authDomain: "authorspace.firebaseapp.com",
     databaseURL: "https://authorspace.firebaseio.com",
@@ -20,13 +21,10 @@ firebase:  {
     storageBucket: "authorspace.appspot.com",
     messagingSenderId: "509825408255",
     appId: "1:509825408255:web:8580f9423d7c98c46d80ca"
-    */
+    
   }
 
 };
-
-
-
 
 /*
  * For easier debugging in development mode, you can import the following file
