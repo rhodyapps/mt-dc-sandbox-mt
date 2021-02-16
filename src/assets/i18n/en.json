@@ -28,5 +28,31 @@
 	"transaction-detail-dictionary-active-label": "Active",
 	"transaction-detail-dictionary-release-label": "Release",
 	"transaction-detail-dictionary-notes-label": "Notes"
+},
+"DICTIONARY" :
+{
+	"dictionary-detail-header": "Dictionary Details",
+	"dictionary-detail-collection-label": "Collection",
+	"dictionary-detail-project-label": "Project",
+	"dictionary-detail-dictionary-name-label": "Name",
+	"dictionary-firestore-id-label": "Firestore ID",
+	"dictionary-mnemonic-label": "Mnemonic",
+	"dictionary-mt-active-label": "Active",
+	"dictionary-notes-label": "Notes",
+	"dictionary-mt-database-label": "MT Database",
+	"dictionary-mt-dictionary-label": "MT Dictionary",
+	"dictionary-mt-document-name-label": "MT Document Name",
+	"dictionary-mt-export-time-label": "MT Export Time",
+	"dictionary-mt-hcis-label": "MT HCIS",
+	"dictionary-mt-hcis-int-label": "MT HCIS Internal",
+	"dictionary-mt-modified-time-label": "MT Last Modified Time",
+	"dictionary-mt-oid-label": "MT OID",
+	"dictionary-mt-release-label": "MT Release",
+	"dictionary-mt-release-int-label": "MT Release Internal",
+	"dictionary-mt-universe-label": "MT Universe",
+	"dictionary-mt-mnemonic-label": "MT Mnemonic",
+	"dictionary-mt-name-label": "MT Name",
+	"dictionary-mt-print-number-label": "MT Print Number"
 }
+
 }

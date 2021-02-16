@@ -1,0 +1,102 @@
+
+<ion-header>
+  <ion-toolbar color="succcess">
+    <ion-buttons slot="start">
+      <ion-button click="dismissModal()">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title> Dictionary Form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+ 
+  <ion-item>
+    <ion-label position="stacked"></ion-label>
+    <ion-input [(ngModel)]="transaction.collection"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="stacked"></ion-label>
+    <ion-input [(ngModel)]="transaction.project"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked"></ion-label>
+    <ion-input [(ngModel)]="transaction.name"></ion-input>
+  </ion-item>
+ 
+  <ion-item>
+    <ion-label position="stacked"></ion-label>
+    <ion-input [(ngModel)]="transaction.mnemonic"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked"></ion-label>
+    <ion-input [(ngModel)]="transaction.active" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked"></ion-label>
+    <ion-input [(ngModel)]="transaction.release"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked"></ion-label>
+    <ion-textarea [(ngModel)]="transaction.notes" rows="8"></ion-textarea>
+  </ion-item>
+
+
+</ion-content>
+ 
+<ion-footer *ngIf="!transaction.id">
+  <ion-toolbar color="success">
+    <ion-button expand="full" fill="clear" color="light" (click)="saveTransaction()">
+      <ion-icon name="checkmark" slot="start"></ion-icon>
+      Add Dictionary Transaction
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
+ 
+<ion-footer *ngIf="transaction.id">
+  <ion-row no-padding text-center>
+    <ion-col size="6">
+      <ion-button expand="block" fill="solid" color="success" (click)="saveTransaction()">
+        <ion-icon name="save" slot="start"></ion-icon>
+        Update
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
+
+
+
+<!--    
+
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card *ngIf="item | async as item">
+      <ion-card-header>
+          <ion-card-title>Form Title {{ item }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+          <p *ngFor="let prop of item | keyvalue">
+              <strong>{{ prop.key }}</strong>: {{ prop.value }}
+          </p>
+      </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+-->

@@ -1,13 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+// import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Transaction } from '../models/transaction';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+  AngularFirestoreCollection,
+  DocumentChangeAction,
+  Action,
+  DocumentSnapshotDoesNotExist,
+  DocumentSnapshotExists,
+} from '@angular/fire/firestore';
+import firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TransactionService {
+  removeTransaction(id: any) {
+    throw new Error('Method not implemented.');
+  }
   private transactionCollection: AngularFirestoreCollection<Transaction>;
 
   private transactions: Observable<Transaction[]>;
@@ -27,6 +40,11 @@ export class TransactionService {
     );
   }
 
+/// Firebase Server Timestamp
+get timestamp() {
+  return firebase.firestore.FieldValue.serverTimestamp();
+}
+
   getTransactions() {
     return this.transactions;
   }
@@ -39,11 +57,24 @@ export class TransactionService {
     return this.transactionCollection.doc(id).update(transaction);
   }
 
+
   addTransaction(transaction: Transaction) {
+    const timestamp = this.timestamp;
     return this.transactionCollection.add(transaction);
+  }
+
+/*
+  add<T>(ref: CollectionPredicate<T>, data): Promise<firebase.firestore.DocumentReference> {
+    const timestamp = this.timestamp;
+    return this.col(ref).add({
+      ...data,
+      updatedAt: timestamp,
+      createdAt: timestamp,
+    });
   }
 
   removeTransaction(id) {
     return this.transactionCollection.doc(id).delete();
   }
+  */
 }

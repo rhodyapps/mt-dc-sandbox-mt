@@ -1,14 +1,15 @@
 <ion-header>
   <ion-toolbar color="succcess">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+    <ion-buttons slot="end">
+      <ion-button onclick="dismissModal()">Close</ion-button>
     </ion-buttons>
     <ion-title>{{ 'TRANSACTION.transaction-detail-header' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
- 
+ <!--  
+
   <ion-item>
     <ion-label position="stacked">{{ 'TRANSACTION.transaction-detail-collection-label' | translate }}</ion-label>
     <ion-input [(ngModel)]="transaction.collection"></ion-input>
@@ -34,6 +35,7 @@
     <ion-input [(ngModel)]="transaction.active" ></ion-input>
   </ion-item>
 
+  
   <ion-item>
     <ion-label position="stacked"> {{ 'TRANSACTION.transaction-detail-dictionary-release-label' | translate }}</ion-label>
     <ion-input [(ngModel)]="transaction.release"></ion-input>
@@ -43,6 +45,41 @@
     <ion-textarea [(ngModel)]="transaction.notes" rows="8"></ion-textarea>
   </ion-item>
 
+-->
+<ion-item>
+  <ion-label position="stacked">{{ 'DICTIONARY.dictionary-detail-collection-label' | translate }}</ion-label>
+  <ion-input [(ngModel)]="transaction.collection"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="stacked">{{ 'DICTIONARY.dictionary-detail-project-label' | translate }}</ion-label>
+  <ion-input [(ngModel)]="transaction.project"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="stacked">{{ 'DICTIONARY.dictionary-mt-name-label' | translate  }}</ion-label>
+  <ion-input [(ngModel)]="transaction.mtName"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="stacked">{{ 'DICTIONARY.dictionary-mt-mnemonic-label' | translate }}</ion-label>
+  <ion-input [(ngModel)]="transaction.mtMnemonic"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="stacked">{{ 'DICTIONARY.dictionary-mt-active-label' | translate }}</ion-label>
+  <ion-input [(ngModel)]="transaction.mtActive" ></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="stacked"> {{ 'DICTIONARY.dictionary-mt-release-label' | translate }}</ion-label>
+  <ion-input [(ngModel)]="transaction.mtRelease"></ion-input>
+</ion-item>
+<ion-item>
+
+  <ion-label position="stacked">{{ 'DICTIONARY.dictionary-mt-hcis-label' | translate }}</ion-label>
+  <ion-textarea [(ngModel)]="transaction.mtHcis" rows="8"></ion-textarea>
+</ion-item>
 
 </ion-content>
  

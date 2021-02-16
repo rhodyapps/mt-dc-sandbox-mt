@@ -70,6 +70,7 @@ export class FirestoreService {
           return actions.map((a: DocumentChangeAction<T>) => {
             // tslint:disable-next-line: ban-types
             const data: Object = a.payload.doc.data() as T;
+            
             const id = a.payload.doc.id;
             return { id, ...data };
           });

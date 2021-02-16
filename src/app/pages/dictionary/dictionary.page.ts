@@ -4,6 +4,7 @@ import { switchMap, map, shareReplay } from 'rxjs/operators';
 import { FirestoreService } from '../../services/firestore.service';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Transaction } from '../../models/transaction';
+import { TranslateModule } from '@ngx-translate/core';
 // import { DataService } from '../../services/data.service';
 import {ActivatedRoute} from '@angular/router';
 // import { map } from 'rxjs/operators';
@@ -15,6 +16,9 @@ import {
 import { Router } from '@angular/router';
 import { ModalBaseComponent } from '../../components/modal-base/modal-base.component';
 import { RecentDetailsPage } from '../../pages/recent-details/recent-details.page';
+import { DictionaryFormPage } from '../dictionary-form/dictionary-form.page';
+// import { DictionaryDetailFormComponent } from 'src/app/components/dictionary-detail-form/dictionary-detail-form.component';
+import { DictionaryDetailPage } from '../dictionary-detail/dictionary-detail.page';
 
 @Component({
   selector: 'app-dictionary',
@@ -85,7 +89,7 @@ toggleStatus(item) {
 
   removeItem(item: { id: any; }) {
     console.log('remove item data');
-        this.db.delete(item.id);
+    this.db.delete(item.id);
   }
 
   get(item: { id: any; }) {
@@ -99,20 +103,20 @@ toggleStatus(item) {
   updateFilter(val) {
     this.filter.next(val);
   }
+ 
+async presentDictionaryForm(item?: any, collection?: any) {
+  console.log('present form item:', item.id, 'collection ', this.collection);
+  collection = this.collection;
+  const modal = await this.modal.create({
+     component: DictionaryDetailPage,
+    componentProps: { item, collection }
+   });
+  return await modal.present();
+ }
 
 
 
-  async presentDictionaryForm(item?: any) {
-    const modal = await this.modalCtrl.create({
-      component: ModalBaseComponent,
-      presentingElement: this.routerOutlet.nativeEl,
-      swipeToClose: true,
-      componentProps: {
-        rootPage: RecentDetailsPage,
-      },
-    });
 
-    await modal.present();
-}
+
 
 }

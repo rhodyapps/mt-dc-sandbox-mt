@@ -23,11 +23,11 @@
     <ion-item-sliding *ngFor="let item of transactions">
       <ion-item lines="inset">
         <ion-label>
-          {{ item.name }}
+          {{ item.mtName }}
           <p>{{ item.createdAt | date:'short' }}</p>
         </ion-label>
         <ion-note slot="end" color="primary">{{ item.priority }}</ion-note>
-        <ion-button [routerLink]="item.id" color="light">
+        <ion-button (click)="PresentDocumentDetails(item)" color="light">
           <ion-icon name="eye"></ion-icon>
       </ion-button>
       
