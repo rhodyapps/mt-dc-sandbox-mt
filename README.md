@@ -1,8 +1,7 @@
 # mt-dc-ra3
 
 This is based on the mt-dictionary-composer template
-Client ID for mt-dc-ra project: 
-978507752529-rfkbbnmlodhvr3q18667c16frnf2fplk.apps.googleusercontent.com
+Client ID and firebase environment config need to be put in.
 The client id goes in the folowing places: capacitor.config.json, index.html, android>res>values>strings.xml 
 
 App ID:     com.firebaseapp.authorspace

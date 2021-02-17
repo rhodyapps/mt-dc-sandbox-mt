@@ -58,9 +58,9 @@ await popover.present();
   }
 */
 
-googleSignIn() {
+// googleSignIn() {
 
-}
+//}
 
   ngOnInit() {
   }

@@ -20,7 +20,7 @@ firebase:  {
     projectId: "authorspace",
     storageBucket: "authorspace.appspot.com",
     messagingSenderId: "509825408255",
-    appId: "1:509825408255:web:8580f9423d7c98c46d80ca"
+    appId: "1:509825408255:web:06724d73199e59246d80ca"
     
   }
 
